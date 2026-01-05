@@ -1,0 +1,44 @@
+# 美国银行规则
+# 包含: 主要银行 & 信用卡公司
+# 最后更新: 2026-01-05
+
+# ========== 主要银行 ==========
+
+# 摩根大通 (JPMorgan Chase)
+DOMAIN-SUFFIX,chase.com
+
+# 美国银行 (Bank of America)
+DOMAIN-SUFFIX,bankofamerica.com
+
+# 富国银行 (Wells Fargo)
+DOMAIN-SUFFIX,wellsfargo.com
+
+# 美国合众银行 (U.S. Bank)
+DOMAIN-SUFFIX,usbank.com
+
+# 第一资本 (Capital One)
+DOMAIN-SUFFIX,capitalone.com
+
+# PNC银行
+DOMAIN-SUFFIX,pnc.com
+
+# Truist银行
+DOMAIN-SUFFIX,truist.com
+
+# USAA
+DOMAIN-SUFFIX,usaa.com
+
+# 海军联邦信用合作社 (Navy Federal Credit Union)
+DOMAIN-SUFFIX,navyfederal.org
+
+# 花旗银行 (Citibank)
+DOMAIN-SUFFIX,citibank.com
+DOMAIN-SUFFIX,citi.com
+
+# ========== 信用卡公司 ==========
+
+# 美国运通 (American Express)
+DOMAIN-SUFFIX,americanexpress.com
+DOMAIN-SUFFIX,amex.com
+DOMAIN-SUFFIX,aexp.com
+DOMAIN-SUFFIX,amextravel.com
