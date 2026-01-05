@@ -1,0 +1,30 @@
+# 美国 Wi-Fi Calling 规则
+# 适用于: AT&T, T-Mobile, Ultra Mobile, Helium Mobile
+# 最后更新: 2026-01-05
+
+# AT&T
+DOMAIN-SUFFIX,epdg.epc.att.net
+DOMAIN-SUFFIX,epdg.epc.att-idns.net
+DOMAIN-SUFFIX,sentitlement2.mobile.att.net
+DOMAIN-SUFFIX,vvm.mobile.att.net
+IP-CIDR,107.122.31.0/32,no-resolve
+
+# T-Mobile / Ultra Mobile / Helium Mobile
+DOMAIN-SUFFIX,crl.t-mobile.com
+DOMAIN-SUFFIX,depdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,eas3.msg.t-mobile.com
+DOMAIN-SUFFIX,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,mascns.t-mobile.com
+DOMAIN-SUFFIX,ns.sipgeo.t-mobile.com
+DOMAIN-SUFFIX,optimizely.com
+DOMAIN-SUFFIX,redirect.ultra.me
+DOMAIN-SUFFIX,epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ultramobile.com
+DOMAIN-SUFFIX,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-KEYWORD,t-mobile
+DOMAIN-KEYWORD,ultramobile
+IP-CIDR,206.29.177.36/32,no-resolve
+IP-CIDR,208.54.0.0/16,no-resolve
+IP-CIDR,66.94.0.0/19,no-resolve
