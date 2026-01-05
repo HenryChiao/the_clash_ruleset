@@ -1,0 +1,6 @@
+# Apple 通用规则
+# 地区检测服务
+# 最后更新: 2026-01-05
+
+# Apple 地区检测
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
