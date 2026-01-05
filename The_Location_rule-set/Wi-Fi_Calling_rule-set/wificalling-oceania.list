@@ -1,0 +1,29 @@
+# 大洋洲 Wi-Fi Calling 规则
+# 适用于: 澳大利亚 & 新西兰运营商
+# 最后更新: 2026-01-05
+
+# ========== 澳大利亚 ==========
+
+# ALDI (使用Telstra网络)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc505.pub.3gppnetwork.org
+IP-CIDR,149.135.0.0/16,no-resolve
+
+# Optus
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc505.pub.3gppnetwork.org
+
+# Vodafone AU / felix / amaysim
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc505.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ents.mnc003.mcc505.pub.3gppnetwork.org
+
+# ========== 新西兰 ==========
+
+# 2degrees
+DOMAIN-SUFFIX,epdg.ims.2degrees.net.nz
+IP-CIDR,118.148.0.0/15,no-resolve
+
+# One NZ (原Vodafone NZ)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc530.pub.3gppnetwork.org
+IP-CIDR,203.96.192.0/19,no-resolve
+
+# Spark / Skinny
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc530.pub.3gppnetwork.spark.co.nz
