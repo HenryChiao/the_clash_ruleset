@@ -1,0 +1,33 @@
+# 德国 Wi-Fi Calling 规则
+# 适用于: Vodafone DE, O2, E-Plus, 1&1
+# 最后更新: 2026-01-05
+
+# Vodafone DE
+DOMAIN-SUFFIX,arcor-ip.de
+DOMAIN-SUFFIX,epdg.epc.drz1.vodafone-ip.de
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc262.pub.3gppnetwork.org
+DOMAIN,ims.mnc002.mcc262.3gppnetwork.org
+DOMAIN-SUFFIX,vodafone-dns.net
+DOMAIN-SUFFIX,vodafone-ip.de
+DOMAIN-SUFFIX,vodafone.de
+IP-CIDR,139.7.117.0/24,no-resolve
+IP-CIDR,139.7.117.160/28,no-resolve
+IP-CIDR,139.7.117.168/30,no-resolve
+IP-CIDR,139.7.96.0/19,no-resolve
+IP-CIDR,194.25.0.60/32,no-resolve
+IP-CIDR,194.25.0.68/32,no-resolve
+
+# O2 Germany
+DOMAIN-SUFFIX,epdg.epc.mnc009.mcc262.pub.3gppnetwork.org
+
+# E-Plus Germany
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc262.pub.3gppnetwork.org
+
+# Drillisch (1&1)
+DOMAIN-SUFFIX,epdg.epc.mnc042.mcc262.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc043.mcc262.pub.3gppnetwork.org
+
+# N26 Bank (德国数字银行)
+DOMAIN-SUFFIX,n26.com
+DOMAIN-SUFFIX,support.n26.com
+DOMAIN-SUFFIX,tech26.de
