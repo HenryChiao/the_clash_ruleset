@@ -1,0 +1,42 @@
+# 英国 Wi-Fi Calling 规则
+# 适用于: Vodafone UK, EE, Giffgaff, CTEXCEL, 3UK, VOXI
+# 最后更新: 2026-01-05
+
+# Vodafone UK
+DOMAIN-SUFFIX,entsrv-uk.vodafone.com
+DOMAIN-SUFFIX,epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
+IP-CIDR,88.82.0.0/19,no-resolve
+IP-CIDR,88.82.11.0/24,no-resolve
+
+# CMLink UK (EE)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc230.pub.3gppnetwork.org
+IP-CIDR,46.68.0.0/17,no-resolve
+IP-CIDR,46.68.57.0/24,no-resolve
+IP-CIDR,46.68.58.0/24,no-resolve
+IP-CIDR,46.68.59.0/24,no-resolve
+
+# Giffgaff (使用O2网络)
+DOMAIN-SUFFIX,giffgaff.com
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org
+IP-CIDR,87.194.0.0/19,no-resolve
+IP-CIDR,87.194.8.0/24,no-resolve
+IP-CIDR,87.194.88.0/23,no-resolve
+IP-CIDR,87.194.88.0/24,no-resolve
+
+# CTEXCEL
+DOMAIN-SUFFIX,epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
+IP-CIDR,31.94.0.0/16,no-resolve
+
+# 3UK
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc234.pub.3gppnetwork.org
+IP-CIDR,185.153.236.0/22,no-resolve
+IP-CIDR,185.153.237.0/24,no-resolve
+
+# VOXI
+DOMAIN-SUFFIX,voxi.co.uk
+IP-CIDR,148.252.160.0/19,no-resolve
+IP-CIDR,148.252.188.0/24,no-resolve
+IP-CIDR,62.141.11.56/24,no-resolve
