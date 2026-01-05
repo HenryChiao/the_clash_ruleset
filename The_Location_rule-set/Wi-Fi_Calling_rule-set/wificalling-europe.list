@@ -1,0 +1,32 @@
+# 欧洲其他地区 Wi-Fi Calling 规则
+# 适用于: 荷兰, 芬兰, 冰岛, 立陶宛, 乌克兰
+# 最后更新: 2026-01-05
+
+# ========== 荷兰 ==========
+
+# Vodafone NL
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc204.pub.3gppnetwork.org
+IP-CIDR,109.32.0.0/13,no-resolve
+
+# ========== 芬兰 ==========
+
+# Elisa
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc244.pub.3gppnetwork.org
+
+# ========== 冰岛 ==========
+
+# Nova
+DOMAIN-SUFFIX,epdg.epc.mnc011.mcc274.pub.3gppnetwork.org
+IP-CIDR,78.40.249.216/31,no-resolve
+
+# ========== 立陶宛 ==========
+
+# Pildyk
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc246.pub.3gppnetwork.org
+
+# ========== 乌克兰 ==========
+
+# lifecell
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc255.pub.3gppnetwork.org
+IP-CIDR,212.58.160.0/19,no-resolve
+IP-CIDR,212.58.168.0/21,no-resolve
