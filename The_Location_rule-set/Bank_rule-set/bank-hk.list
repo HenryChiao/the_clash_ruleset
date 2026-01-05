@@ -1,0 +1,54 @@
+# 香港银行规则
+# 包含: 传统银行 & 虚拟银行
+# 最后更新: 2026-01-05
+
+# ========== 传统银行 ==========
+
+# 汇丰银行 (HSBC)
+DOMAIN-SUFFIX,hsbc.com.hk
+
+# 恒生银行 (Hang Seng Bank)
+DOMAIN-SUFFIX,hangseng.com
+
+# 中国银行(香港) (Bank of China Hong Kong)
+DOMAIN-SUFFIX,bochk.com
+
+# 东亚银行 (Bank of East Asia)
+DOMAIN-SUFFIX,hkbea.com
+
+# 渣打银行 (Standard Chartered)
+DOMAIN-SUFFIX,sc.com
+
+# 花旗银行 (Citibank)
+DOMAIN-SUFFIX,citibank.com.hk
+
+# 星展银行 (DBS Bank)
+DOMAIN-SUFFIX,dbs.com.hk
+
+# 工银亚洲 (ICBC Asia)
+DOMAIN-SUFFIX,icbcasia.com
+
+# 建设银行(亚洲) (CCB Asia)
+DOMAIN-SUFFIX,asia.ccb.com
+DOMAIN-SUFFIX,online.asia.ccb.com
+
+# 华侨银行 (OCBC)
+DOMAIN-SUFFIX,ocbc.com.hk
+
+# 大新银行 (Dah Sing Bank)
+DOMAIN-SUFFIX,dahsing.com
+
+# ========== 虚拟银行 ==========
+
+# ZA Bank 众安银行
+DOMAIN-SUFFIX,bank.za.group
+DOMAIN-SUFFIX,za.group
+
+# WeLab Bank 汇立银行
+DOMAIN-SUFFIX,welab.bank
+
+# Fusion Bank 富融银行
+DOMAIN-SUFFIX,fusionbank.com
+
+# Mox Bank
+DOMAIN-SUFFIX,mox.com
