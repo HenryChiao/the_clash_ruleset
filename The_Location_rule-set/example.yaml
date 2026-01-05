@@ -1,0 +1,191 @@
+# Mihomo (Clash Meta) 配置示例
+# Wi-Fi Calling & 银行分流规则集成
+# 最后更新: 2026-01-05
+
+# ========== 规则集配置 ==========
+rule-providers:
+  # Apple 通用
+  apple-location:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/apple-location.list"
+    path: ./ruleset/apple-location.yaml
+    interval: 86400
+
+  # Wi-Fi Calling - 美洲
+  wificalling-us:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-us.list"
+    path: ./ruleset/wificalling-us.yaml
+    interval: 86400
+
+  wificalling-mexico:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-americas.list"
+    path: ./ruleset/wificalling-americas.yaml
+    interval: 86400
+
+  # Wi-Fi Calling - 欧洲
+  wificalling-uk:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-uk.list"
+    path: ./ruleset/wificalling-uk.yaml
+    interval: 86400
+
+  wificalling-de:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-de.list"
+    path: ./ruleset/wificalling-de.yaml
+    interval: 86400
+
+  wificalling-europe-other:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-europe.list"
+    path: ./ruleset/wificalling-europe.yaml
+    interval: 86400
+
+  # Wi-Fi Calling - 亚太
+  wificalling-hk:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-hk.list"
+    path: ./ruleset/wificalling-hk.yaml
+    interval: 86400
+
+  wificalling-asia:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-asia.list"
+    path: ./ruleset/wificalling-asia.yaml
+    interval: 86400
+
+  wificalling-oceania:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/wificalling-oceania.list"
+    path: ./ruleset/wificalling-oceania.yaml
+    interval: 86400
+
+  # 银行规则
+  bank-hk:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/bank-hk.list"
+    path: ./ruleset/bank-hk.yaml
+    interval: 86400
+
+  bank-us:
+    type: http
+    behavior: classical
+    url: "https://your-cdn.com/bank-us.list"
+    path: ./ruleset/bank-us.yaml
+    interval: 86400
+
+# ========== 代理组配置 ==========
+proxy-groups:
+  - name: "🌍 全球直连"
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: "🇭🇰 香港节点"
+    type: select
+    use:
+      - your-subscription
+    filter: "香港|HK|Hong Kong"
+
+  - name: "🇺🇸 美国节点"
+    type: select
+    use:
+      - your-subscription
+    filter: "美国|US|United States"
+
+  - name: "🇬🇧 英国节点"
+    type: select
+    use:
+      - your-subscription
+    filter: "英国|UK|United Kingdom"
+
+  - name: "🇩🇪 德国节点"
+    type: select
+    use:
+      - your-subscription
+    filter: "德国|DE|Germany"
+
+  - name: "📱 Wi-Fi Calling"
+    type: select
+    proxies:
+      - 🌍 全球直连
+      - DIRECT
+
+  - name: "🏦 香港银行"
+    type: select
+    proxies:
+      - 🇭🇰 香港节点
+      - 🌍 全球直连
+      - DIRECT
+
+  - name: "🏦 美国银行"
+    type: select
+    proxies:
+      - 🇺🇸 美国节点
+      - 🌍 全球直连
+      - DIRECT
+
+# ========== 规则配置 ==========
+rules:
+  # Apple 地区检测
+  - RULE-SET,apple-location,🌍 全球直连
+
+  # Wi-Fi Calling 规则 (建议全部直连)
+  - RULE-SET,wificalling-us,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-uk,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-hk,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-de,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-asia,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-oceania,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-europe-other,📱 Wi-Fi Calling
+  - RULE-SET,wificalling-mexico,📱 Wi-Fi Calling
+
+  # 银行规则
+  - RULE-SET,bank-hk,🏦 香港银行
+  - RULE-SET,bank-us,🏦 美国银行
+
+  # 最终规则
+  - MATCH,DIRECT
+
+# ========== 简化配置示例 (本地规则) ==========
+# 如果不想使用 rule-providers,可以直接内嵌规则:
+
+# rules:
+#   # Apple
+#   - DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,DIRECT
+#   
+#   # 美国 Wi-Fi Calling
+#   - DOMAIN-SUFFIX,epdg.epc.att.net,DIRECT
+#   - DOMAIN-SUFFIX,crl.t-mobile.com,DIRECT
+#   - IP-CIDR,107.122.31.0/32,DIRECT,no-resolve
+#   
+#   # 香港 Wi-Fi Calling
+#   - DOMAIN-SUFFIX,wlan.three.com.hk,DIRECT
+#   - IP-CIDR,203.145.92.0/32,DIRECT,no-resolve
+#   
+#   # 香港银行
+#   - DOMAIN-SUFFIX,hsbc.com.hk,🇭🇰 香港节点
+#   - DOMAIN-SUFFIX,hangseng.com,🇭🇰 香港节点
+#   
+#   # 美国银行
+#   - DOMAIN-SUFFIX,chase.com,🇺🇸 美国节点
+#   - DOMAIN-SUFFIX,bankofamerica.com,🇺🇸 美国节点
+
+# ========== 使用说明 ==========
+# 1. 将生成的 .list 文件上传到您的 CDN 或 GitHub
+# 2. 修改 url 字段为实际文件地址
+# 3. 根据需要选择使用 rule-providers 或直接内嵌规则
+# 4. Wi-Fi Calling 建议设置为 DIRECT 直连
+# 5. 银行规则根据实际情况选择节点或直连
