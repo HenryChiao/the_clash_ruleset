@@ -1,0 +1,23 @@
+# 亚洲 Wi-Fi Calling 规则
+# 适用于: 泰国, 马来西亚, 斯里兰卡
+# 最后更新: 2026-01-05
+
+# ========== 泰国 ==========
+
+# AIS
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc520.pub.3gppnetwork.org
+IP-CIDR,119.31.123.0/24,no-resolve
+IP-CIDR,119.31.0.0/17,no-resolve
+
+# ========== 马来西亚 ==========
+
+# Maxis
+DOMAIN-SUFFIX,epdg.epc.mnc012.mcc502.pub.3gppnetwork.org
+
+# Digi
+DOMAIN-SUFFIX,epdg.epc.mnc016.mcc502.pub.3gppnetwork.org
+
+# ========== 斯里兰卡 ==========
+
+# Dialog
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc413.pub.3gppnetwork.org
