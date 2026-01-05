@@ -1,0 +1,8 @@
+# 美洲其他地区 Wi-Fi Calling 规则
+# 适用于: 墨西哥
+# 最后更新: 2026-01-05
+
+# ========== 墨西哥 ==========
+
+# WIM (Wireless Information Multimedia)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc334.pub.3gppnetwork.org
