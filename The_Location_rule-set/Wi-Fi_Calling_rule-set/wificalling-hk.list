@@ -1,0 +1,27 @@
+# 香港 Wi-Fi Calling 规则
+# 适用于: 3HK, CSL, HKT, 1010, One2Free
+# 最后更新: 2026-01-05
+
+# 3HK (Three Hong Kong)
+DOMAIN-SUFFIX,wlan.three.com.hk
+DOMAIN-SUFFIX,wlan.datapath.three.com.hk
+DOMAIN-SUFFIX,device.three.com.hk
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
+
+# CSL (HKT / 1010 / One2Free)
+DOMAIN-SUFFIX,csl.prod.ondemandconnectivity.com
+
+# Hutchison
+DOMAIN-SUFFIX,hhk.prod.ondemandconnectivity.com
+
+# IP 段
+IP-CIDR,203.145.92.0/32,no-resolve
+IP-CIDR,203.145.88.0/21,no-resolve
+IP-CIDR,203.145.80.0/20,no-resolve
+IP-CIDR,124.217.186.0/32,no-resolve
+IP-CIDR,124.217.128.0/18,no-resolve
+IP-CIDR,120.88.224.0/32,no-resolve
+IP-CIDR,120.88.240.0/32,no-resolve
+IP-CIDR,4.209.41.0/24,no-resolve
