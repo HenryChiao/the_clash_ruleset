@@ -1,191 +1,207 @@
-# Mihomo (Clash Meta) 配置示例
-# Wi-Fi Calling & 银行分流规则集成
-# 最后更新: 2026-01-05
+# WiFi Calling 正确配置示例
+# 
+# 重要说明：
+# WiFi Calling 必须通过对应国家的代理节点才能正常工作
+# 不能使用 DIRECT（直连），否则无法连接到运营商服务器
+#
+# 使用方法：
+# 1. 根据您的运营商所在国家，选择对应的国家节点组
+# 2. 将规则配置中的策略组名称替换为您实际使用的策略组名称
+# 3. 如果有多个运营商，可以创建多个规则集分别处理
 
-# ========== 规则集配置 ==========
-rule-providers:
-  # Apple 通用
-  apple-location:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/apple-location.list"
-    path: ./ruleset/apple-location.yaml
-    interval: 86400
-
-  # Wi-Fi Calling - 美洲
-  wificalling-us:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-us.list"
-    path: ./ruleset/wificalling-us.yaml
-    interval: 86400
-
-  wificalling-mexico:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-americas.list"
-    path: ./ruleset/wificalling-americas.yaml
-    interval: 86400
-
-  # Wi-Fi Calling - 欧洲
-  wificalling-uk:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-uk.list"
-    path: ./ruleset/wificalling-uk.yaml
-    interval: 86400
-
-  wificalling-de:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-de.list"
-    path: ./ruleset/wificalling-de.yaml
-    interval: 86400
-
-  wificalling-europe-other:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-europe.list"
-    path: ./ruleset/wificalling-europe.yaml
-    interval: 86400
-
-  # Wi-Fi Calling - 亚太
-  wificalling-hk:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-hk.list"
-    path: ./ruleset/wificalling-hk.yaml
-    interval: 86400
-
-  wificalling-asia:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-asia.list"
-    path: ./ruleset/wificalling-asia.yaml
-    interval: 86400
-
-  wificalling-oceania:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/wificalling-oceania.list"
-    path: ./ruleset/wificalling-oceania.yaml
-    interval: 86400
-
-  # 银行规则
-  bank-hk:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/bank-hk.list"
-    path: ./ruleset/bank-hk.yaml
-    interval: 86400
-
-  bank-us:
-    type: http
-    behavior: classical
-    url: "https://your-cdn.com/bank-us.list"
-    path: ./ruleset/bank-us.yaml
-    interval: 86400
-
-# ========== 代理组配置 ==========
+# ========================================
+# 方案一：单运营商配置（推荐）
+# ========================================
 proxy-groups:
-  - name: "🌍 全球直连"
+  # 根据运营商所在国家创建对应的策略组
+  - name: 🇺🇸 美国节点
+    type: select
+    use:
+      - your-proxy-provider  # 替换为您的代理提供者名称
+    filter: '(?i)美|美国|us|united states|america'
+  
+  - name: 🇬🇧 英国节点
+    type: select
+    use:
+      - your-proxy-provider
+    filter: '(?i)英|英国|uk|united kingdom|britain'
+  
+  - name: 🇨🇦 加拿大节点
+    type: select
+    use:
+      - your-proxy-provider
+    filter: '(?i)加拿大|canada|ca'
+  
+  - name: 📞 WiFi Calling
     type: select
     proxies:
-      - DIRECT
+      - 🇺🇸 美国节点  # 美国运营商选这个
+      - 🇬🇧 英国节点  # 英国运营商选这个
+      - 🇨🇦 加拿大节点  # 加拿大运营商选这个
+    # 根据您的实际情况，可以删除不需要的选项
 
-  - name: "🇭🇰 香港节点"
+rule-providers:
+  wificalling:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling.yaml"
+    path: ./ruleset/wificalling.yaml
+    interval: 86400
+
+rules:
+  # WiFi Calling 规则 - 使用专用策略组
+  - RULE-SET,wificalling,📞 WiFi Calling
+  # ... 其他规则
+
+# ========================================
+# 方案二：多运营商配置
+# ========================================
+# 如果您使用多张不同国家的 SIM 卡，需要为每个运营商配置独立规则
+
+proxy-groups:
+  - name: 🇺🇸 美国节点
     type: select
     use:
-      - your-subscription
-    filter: "香港|HK|Hong Kong"
-
-  - name: "🇺🇸 美国节点"
+      - your-proxy-provider
+    filter: '(?i)美|美国|us|united states'
+  
+  - name: 🇬🇧 英国节点
     type: select
     use:
-      - your-subscription
-    filter: "美国|US|United States"
-
-  - name: "🇬🇧 英国节点"
-    type: select
-    use:
-      - your-subscription
-    filter: "英国|UK|United Kingdom"
-
-  - name: "🇩🇪 德国节点"
-    type: select
-    use:
-      - your-subscription
-    filter: "德国|DE|Germany"
-
-  - name: "📱 Wi-Fi Calling"
-    type: select
-    proxies:
-      - 🌍 全球直连
-      - DIRECT
-
-  - name: "🏦 香港银行"
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - 🌍 全球直连
-      - DIRECT
-
-  - name: "🏦 美国银行"
+      - your-proxy-provider
+    filter: '(?i)英|英国|uk|united kingdom'
+  
+  - name: 📞 AT&T WiFi Calling
     type: select
     proxies:
       - 🇺🇸 美国节点
-      - 🌍 全球直连
-      - DIRECT
+  
+  - name: 📞 Vodafone WiFi Calling
+    type: select
+    proxies:
+      - 🇬🇧 英国节点
 
-# ========== 规则配置 ==========
+rule-providers:
+  # AT&T WiFi Calling（美国）
+  wificalling-att:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us-att.yaml"
+    path: ./ruleset/wificalling-att.yaml
+    interval: 86400
+  
+  # Vodafone WiFi Calling（英国）
+  wificalling-vodafone:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-uk-vodafone.yaml"
+    path: ./ruleset/wificalling-vodafone.yaml
+    interval: 86400
+
 rules:
-  # Apple 地区检测
-  - RULE-SET,apple-location,🌍 全球直连
+  # 按运营商分配不同的策略组
+  - RULE-SET,wificalling-att,📞 AT&T WiFi Calling
+  - RULE-SET,wificalling-vodafone,📞 Vodafone WiFi Calling
+  # ... 其他规则
 
-  # Wi-Fi Calling 规则 (建议全部直连)
-  - RULE-SET,wificalling-us,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-uk,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-hk,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-de,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-asia,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-oceania,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-europe-other,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-mexico,📱 Wi-Fi Calling
+# ========================================
+# 方案三：自动选择最优节点
+# ========================================
+# 使用 url-test 或 fallback 自动选择延迟最低的节点
 
-  # 银行规则
-  - RULE-SET,bank-hk,🏦 香港银行
-  - RULE-SET,bank-us,🏦 美国银行
+proxy-groups:
+  - name: 🇺🇸 美国-自动
+    type: url-test  # 自动选择延迟最低的节点
+    use:
+      - your-proxy-provider
+    filter: '(?i)美|美国|us|united states'
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300  # 每 5 分钟测试一次
+    tolerance: 50  # 延迟差距在 50ms 内不切换节点
+  
+  - name: 🇺🇸 美国-手动
+    type: select  # 手动选择节点
+    use:
+      - your-proxy-provider
+    filter: '(?i)美|美国|us|united states'
+  
+  - name: 📞 WiFi Calling
+    type: select
+    proxies:
+      - 🇺🇸 美国-自动  # 推荐：自动选择最优节点
+      - 🇺🇸 美国-手动  # 备选：手动指定节点
 
-  # 最终规则
-  - MATCH,DIRECT
+rule-providers:
+  wificalling:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling.yaml"
+    path: ./ruleset/wificalling.yaml
+    interval: 86400
 
-# ========== 简化配置示例 (本地规则) ==========
-# 如果不想使用 rule-providers,可以直接内嵌规则:
+rules:
+  - RULE-SET,wificalling,📞 WiFi Calling
+  # ... 其他规则
 
+# ========================================
+# 常见运营商国家对应表
+# ========================================
+# 美国：AT&T, T-Mobile, Verizon
+# 英国：Vodafone, EE, O2, Three
+# 加拿大：Rogers, Bell, Telus
+# 澳大利亚：Telstra, Optus, Vodafone
+# 新西兰：Spark, Vodafone, 2degrees
+# 日本：NTT Docomo, au, SoftBank
+# 韩国：SK Telecom, KT, LG U+
+# 新加坡：Singtel, StarHub, M1
+# 香港：中国移动, CSL, 3HK
+
+# ========================================
+# 错误配置示例（请勿使用）
+# ========================================
+# ❌ 错误 1: 使用 DIRECT
 # rules:
-#   # Apple
-#   - DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,DIRECT
-#   
-#   # 美国 Wi-Fi Calling
-#   - DOMAIN-SUFFIX,epdg.epc.att.net,DIRECT
-#   - DOMAIN-SUFFIX,crl.t-mobile.com,DIRECT
-#   - IP-CIDR,107.122.31.0/32,DIRECT,no-resolve
-#   
-#   # 香港 Wi-Fi Calling
-#   - DOMAIN-SUFFIX,wlan.three.com.hk,DIRECT
-#   - IP-CIDR,203.145.92.0/32,DIRECT,no-resolve
-#   
-#   # 香港银行
-#   - DOMAIN-SUFFIX,hsbc.com.hk,🇭🇰 香港节点
-#   - DOMAIN-SUFFIX,hangseng.com,🇭🇰 香港节点
-#   
-#   # 美国银行
-#   - DOMAIN-SUFFIX,chase.com,🇺🇸 美国节点
-#   - DOMAIN-SUFFIX,bankofamerica.com,🇺🇸 美国节点
+#   - RULE-SET,wificalling,DIRECT  # 错误！WiFi Calling 无法直连
 
-# ========== 使用说明 ==========
-# 1. 将生成的 .list 文件上传到您的 CDN 或 GitHub
-# 2. 修改 url 字段为实际文件地址
-# 3. 根据需要选择使用 rule-providers 或直接内嵌规则
-# 4. Wi-Fi Calling 建议设置为 DIRECT 直连
-# 5. 银行规则根据实际情况选择节点或直连
+# ❌ 错误 2: 使用错误的国家节点
+# rules:
+#   - RULE-SET,wificalling,🇯🇵 日本节点  # 如果是美国运营商，这样配置会导致无法连接
+
+# ❌ 错误 3: 使用全局代理组
+# rules:
+#   - RULE-SET,wificalling,🚀 节点选择  # 不推荐，可能会选择到错误国家的节点
+
+# ========================================
+# 调试和测试
+# ========================================
+# 1. 查看 Clash 日志确认规则加载成功
+# 2. 测试 WiFi Calling 连接：
+#    - 打开手机的 WiFi Calling 功能
+#    - 确认状态栏显示 WiFi Calling 图标
+#    - 拨打测试电话
+# 3. 如果无法连接，检查：
+#    - 节点是否在线且延迟正常
+#    - 节点所在国家是否正确
+#    - 防火墙是否阻止相关端口
+#    - 运营商是否支持 WiFi Calling
+
+# ========================================
+# 性能优化建议
+# ========================================
+# 1. 使用低延迟节点
+# 2. 启用节点健康检查
+proxy-groups:
+  - name: 🇺🇸 美国节点
+    type: url-test
+    use:
+      - your-proxy-provider
+    filter: '(?i)美|美国|us'
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    lazy: false  # 启用后台持续测试
+
+# 3. 合理设置更新间隔
+rule-providers:
+  wificalling:
+    interval: 86400  # WiFi Calling 规则相对稳定，24 小时更新一次即可
