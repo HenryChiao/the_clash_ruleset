@@ -1,196 +1,196 @@
-# Wi-Fi Calling & 银行规则集 - 使用说明
+# The Location Rule-Set
 
-## 📦 规则文件列表
+地区分流规则集 - Wi-Fi Calling & 银行服务专用规则
 
-### 🍎 Apple 通用
-- `apple-location.list` - Apple 地区检测服务
+---
+
+## 📋 规则列表
+
+### 🍎 Apple 服务
+| 文件名 | 说明 | 规则数 | 更新日期 |
+|--------|------|--------|----------|
+| `apple-location.list` | Apple 地区检测服务 | 1 | 2026-01-05 |
+
+---
 
 ### 📱 Wi-Fi Calling 规则
 
 #### 美洲地区
-- `wificalling-us.list` - 美国 (AT&T, T-Mobile, Ultra, Helium)
-- `wificalling-americas.list` - 墨西哥 (WIM)
+
+| 文件名 | 覆盖国家 | 主要运营商 | 规则数 |
+|--------|----------|-----------|--------|
+| `wificalling-us.list` | 🇺🇸 美国 | AT&T<br>T-Mobile<br>Ultra Mobile<br>Helium Mobile | 26 |
+| `wificalling-americas.list` | 🇲🇽 墨西哥 | WIM | 1 |
 
 #### 欧洲地区
-- `wificalling-uk.list` - 英国 (Vodafone, EE, Giffgaff, 3UK, VOXI, CTEXCEL)
-- `wificalling-de.list` - 德国 (Vodafone, O2, E-Plus, 1&1)
-- `wificalling-europe.list` - 其他欧洲国家 (荷兰, 芬兰, 冰岛, 立陶宛, 乌克兰)
+
+| 文件名 | 覆盖国家 | 主要运营商 | 规则数 |
+|--------|----------|-----------|--------|
+| `wificalling-uk.list` | 🇬🇧 英国 | Vodafone UK<br>EE (CMLink UK)<br>Giffgaff<br>3UK<br>VOXI<br>CTEXCEL | 35 |
+| `wificalling-de.list` | 🇩🇪 德国 | Vodafone DE<br>O2<br>E-Plus<br>Drillisch (1&1) | 27 |
+| `wificalling-europe.list` | 🇳🇱 荷兰<br>🇫🇮 芬兰<br>🇮🇸 冰岛<br>🇱🇹 立陶宛<br>🇺🇦 乌克兰 | Vodafone NL<br>Elisa<br>Nova<br>Pildyk<br>lifecell | 10 |
 
 #### 亚太地区
-- `wificalling-hk.list` - 香港 (3HK, CSL, HKT)
-- `wificalling-asia.list` - 泰国, 马来西亚, 斯里兰卡
-- `wificalling-oceania.list` - 澳大利亚 & 新西兰
 
-### 🏦 银行规则
-- `bank-hk.list` - 香港银行 (13家传统银行 + 4家虚拟银行)
-- `bank-us.list` - 美国银行 (10家主要银行 + 美国运通)
-
----
-
-## 📊 规则统计
-
-| 类别 | 文件数 | 规则总数 | 覆盖范围 |
-|------|--------|----------|----------|
-| Apple | 1 | 1 | 全球 |
-| Wi-Fi Calling | 7 | 160+ | 15国/地区, 40+运营商 |
-| 银行 | 2 | 42 | 香港, 美国 |
-| **总计** | **10** | **200+** | **全球主要地区** |
+| 文件名 | 覆盖国家 | 主要运营商 | 规则数 |
+|--------|----------|-----------|--------|
+| `wificalling-hk.list` | 🇭🇰 香港 | 3HK (Three)<br>CSL<br>HKT / 1010 / One2Free | 17 |
+| `wificalling-asia.list` | 🇹🇭 泰国<br>🇲🇾 马来西亚<br>🇱🇰 斯里兰卡 | AIS<br>Maxis<br>Digi<br>Dialog | 7 |
+| `wificalling-oceania.list` | 🇦🇺 澳大利亚<br>🇳🇿 新西兰 | ALDI<br>Optus<br>Vodafone AU<br>One NZ<br>2degrees<br>Spark | 9 |
 
 ---
 
-## 🚀 快速开始
+### 🏦 银行服务规则
 
-### 方案一: 使用 Rule Providers (推荐)
+| 文件名 | 覆盖地区 | 包含机构 | 规则数 |
+|--------|----------|----------|--------|
+| `bank-hk.list` | 🇭🇰 香港 | **传统银行 (13家)**<br>汇丰、恒生、中银香港、东亚、渣打<br>花旗、星展、工银亚洲、建行亚洲<br>华侨银行、大新银行<br><br>**虚拟银行 (4家)**<br>ZA Bank、WeLab Bank<br>Fusion Bank、Mox Bank | 20 |
+| `bank-us.list` | 🇺🇸 美国 | **主要银行 (10家)**<br>JPMorgan Chase、Bank of America<br>Wells Fargo、U.S. Bank<br>Capital One、PNC、Truist<br>USAA、Navy Federal、Citi<br><br>**信用卡 (1家)**<br>American Express | 18 |
 
-1. **上传规则文件**
-   - 将所有 `.list` 文件上传到 GitHub 仓库或 CDN
-   - 确保文件可通过 HTTPS 访问
+---
 
-2. **配置 Mihomo**
-   ```yaml
-   rule-providers:
-     wificalling-us:
-       type: http
-       behavior: classical
-       url: "https://raw.githubusercontent.com/your-repo/wificalling-us.list"
-       path: ./ruleset/wificalling-us.yaml
-       interval: 86400
-   
-   rules:
-     - RULE-SET,wificalling-us,DIRECT
-   ```
+## 🚀 使用方法
 
-3. **重新加载配置**
-   ```bash
-   # 重启 Mihomo 或重新加载配置
-   systemctl restart mihomo
-   ```
+### Mihomo / Clash Meta 配置
 
-### 方案二: 直接内嵌规则
-
-将规则内容直接复制到 Mihomo 配置文件的 `rules` 部分:
+#### 方式一: Rule Providers (推荐)
 
 ```yaml
-rules:
-  # 美国 Wi-Fi Calling
-  - DOMAIN-SUFFIX,epdg.epc.att.net,DIRECT
-  - DOMAIN-SUFFIX,crl.t-mobile.com,DIRECT
-  - IP-CIDR,107.122.31.0/32,DIRECT,no-resolve
-  
+rule-providers:
+  # Wi-Fi Calling - 美国
+  wificalling-us:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
+    path: ./ruleset/wificalling-us.yaml
+    interval: 86400
+
+  # Wi-Fi Calling - 香港
+  wificalling-hk:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
+    path: ./ruleset/wificalling-hk.yaml
+    interval: 86400
+
   # 香港银行
-  - DOMAIN-SUFFIX,hsbc.com.hk,HK-Proxy
-  - DOMAIN-SUFFIX,hangseng.com,HK-Proxy
+  bank-hk:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
+    path: ./ruleset/bank-hk.yaml
+    interval: 86400
+
+proxy-groups:
+  - name: "🇺🇸 美国"
+    type: select
+    # 你的美国节点
+
+  - name: "🇭🇰 香港"
+    type: select
+    # 你的香港节点
+
+rules:
+  - RULE-SET,wificalling-us,🇺🇸 美国
+  - RULE-SET,wificalling-hk,🇭🇰 香港
+  - RULE-SET,bank-hk,🇭🇰 香港
 ```
 
----
+#### 方式二: CDN 加速 (国内推荐)
 
-## 📋 各地区运营商覆盖
-
-### 🇺🇸 美国
-- **AT&T** - 完整支持
-- **T-Mobile** - 完整支持 (含 Ultra Mobile, Helium Mobile)
-
-### 🇬🇧 英国
-- **Vodafone UK** - 完整支持
-- **EE** - 完整支持 (CMLink UK)
-- **Giffgaff** - 完整支持 (使用O2网络)
-- **3UK** - 完整支持
-- **VOXI** - 完整支持
-- **CTEXCEL** - 完整支持
-
-### 🇭🇰 香港
-- **3HK** (Three Hong Kong) - 完整支持
-- **CSL** - 完整支持
-- **HKT/1010/One2Free** - 完整支持
-
-### 🇩🇪 德国
-- **Vodafone DE** - 完整支持
-- **O2** - 完整支持
-- **E-Plus** - 完整支持
-- **1&1 (Drillisch)** - 完整支持
-
-### 🇦🇺 澳大利亚
-- **ALDI** - 完整支持
-- **Optus** - 完整支持 (felix)
-- **Vodafone AU** - 完整支持 (amaysim)
-
-### 🇳🇿 新西兰
-- **One NZ** - 完整支持
-- **2degrees** - 完整支持
-- **Spark/Skinny** - 完整支持
-
-### 🇹🇭 泰国
-- **AIS** - 完整支持
-
-### 🇲🇾 马来西亚
-- **Maxis** - 完整支持
-- **Digi** - 完整支持
-
-### 其他地区
-- 🇳🇱 荷兰: Vodafone NL
-- 🇫🇮 芬兰: Elisa
-- 🇮🇸 冰岛: Nova
-- 🇱🇹 立陶宛: Pildyk
-- 🇺🇦 乌克兰: lifecell
-- 🇱🇰 斯里兰卡: Dialog
-- 🇲🇽 墨西哥: WIM
+```yaml
+rule-providers:
+  wificalling-us:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
+    path: ./ruleset/wificalling-us.yaml
+    interval: 86400
+```
 
 ---
 
 ## 💡 配置建议
 
-### Wi-Fi Calling 策略
+### ⚠️ 重要: Wi-Fi Calling 策略配置
 
-**推荐配置: 全部 DIRECT 直连**
+**Wi-Fi Calling 应该使用对应国家的节点，而不是直连！**
 
 ```yaml
-proxy-groups:
-  - name: "📱 Wi-Fi Calling"
-    type: select
-    proxies:
-      - DIRECT
-
+# ✅ 正确配置
 rules:
-  - RULE-SET,wificalling-us,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-uk,📱 Wi-Fi Calling
-  - RULE-SET,wificalling-hk,📱 Wi-Fi Calling
-  # ... 其他地区规则
+  - RULE-SET,wificalling-us,🇺🇸 美国节点
+  - RULE-SET,wificalling-uk,🇬🇧 英国节点
+  - RULE-SET,wificalling-hk,🇭🇰 香港节点
+  - RULE-SET,wificalling-de,🇩🇪 德国节点
+
+# ❌ 错误配置
+rules:
+  - RULE-SET,wificalling-us,DIRECT  # 错误!
+  - RULE-SET,wificalling-uk,DIRECT  # 错误!
 ```
 
-**原因:**
-- Wi-Fi Calling 需要低延迟连接运营商 ePDG 网关
-- 通过代理会增加延迟,影响通话质量
-- 某些运营商可能检测代理连接并拒绝服务
+#### 为什么不能直连？
 
-### 银行规则策略
+1. **地理位置验证**
+   - Wi-Fi Calling 服务需要连接到运营商在对应国家的 ePDG (evolved Packet Data Gateway) 服务器
+   - 运营商会验证连接来源的地理位置
+   - 如果您不在运营商所在国家，直连会被拒绝
+
+2. **IP 地址限制**
+   - 运营商的 ePDG 服务器通常只接受来自特定地区的连接
+   - 使用对应地区节点可以让您的连接看起来来自正确的位置
+
+3. **服务可用性**
+   - 某些运营商的 Wi-Fi Calling 服务仅在本国境内提供
+   - 使用节点可以绕过地理限制
+
+#### 实际使用场景
+
+**场景 A: 在中国大陆使用美国 T-Mobile 的 Wi-Fi Calling**
+```yaml
+# 需要使用美国节点
+- RULE-SET,wificalling-us,🇺🇸 美国节点
+```
+
+**场景 B: 在英国使用香港 3HK 的 Wi-Fi Calling**
+```yaml
+# 需要使用香港节点
+- RULE-SET,wificalling-hk,🇭🇰 香港节点
+```
+
+**场景 C: 已在运营商所在国家**
+```yaml
+# 如果您已经在美国，可以直连
+- RULE-SET,wificalling-us,DIRECT
+
+# 但为了稳定性，仍建议使用本地节点
+- RULE-SET,wificalling-us,🇺🇸 美国节点
+```
+
+---
+
+### 银行服务策略配置
 
 #### 方案 A: 使用对应地区节点 (推荐)
 
 ```yaml
-proxy-groups:
-  - name: "🏦 香港银行"
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - DIRECT
-
-  - name: "🏦 美国银行"
-    type: select
-    proxies:
-      - 🇺🇸 美国节点
-      - DIRECT
-
 rules:
-  - RULE-SET,bank-hk,🏦 香港银行
-  - RULE-SET,bank-us,🏦 美国银行
+  - RULE-SET,bank-hk,🇭🇰 香港节点
+  - RULE-SET,bank-us,🇺🇸 美国节点
 ```
 
-**适用场景:**
-- 在非银行所在地区访问银行服务
-- 需要绕过地区限制
-- 提升访问速度
+**优点:**
+- ✅ 绕过地理位置限制
+- ✅ 提升访问速度（特别是在国外时）
+- ✅ 避免跨境访问导致的超时
 
-#### 方案 B: 全部直连
+**适用场景:**
+- 在国外访问香港/美国银行
+- 银行有地区访问限制
+- 需要更快的访问速度
+
+#### 方案 B: 直连
 
 ```yaml
 rules:
@@ -198,42 +198,76 @@ rules:
   - RULE-SET,bank-us,DIRECT
 ```
 
+**优点:**
+- ✅ 最低延迟
+- ✅ 避免节点不稳定
+- ✅ 降低触发风控的风险
+
 **适用场景:**
-- 在银行所在地区使用
-- 追求最低延迟
-- 避免代理连接触发风控
+- 已在银行所在地区
+- 网络环境稳定
+- 银行无地理位置限制
 
 ---
 
-## ⚙️ 规则优先级
+## 📊 规则详情
 
-推荐规则顺序 (从高到低):
+### Wi-Fi Calling 规则组成
 
-```yaml
-rules:
-  # 1. Apple 服务
-  - RULE-SET,apple-location,DIRECT
-  
-  # 2. Wi-Fi Calling (最高优先级)
-  - RULE-SET,wificalling-us,DIRECT
-  - RULE-SET,wificalling-uk,DIRECT
-  - RULE-SET,wificalling-hk,DIRECT
-  - RULE-SET,wificalling-de,DIRECT
-  - RULE-SET,wificalling-asia,DIRECT
-  - RULE-SET,wificalling-oceania,DIRECT
-  - RULE-SET,wificalling-europe-other,DIRECT
-  - RULE-SET,wificalling-mexico,DIRECT
-  
-  # 3. 银行服务
-  - RULE-SET,bank-hk,🏦 香港银行
-  - RULE-SET,bank-us,🏦 美国银行
-  
-  # 4. 其他规则...
-  - RULE-SET,your-other-rules,PROXY
-  
-  # 5. 最终匹配
-  - MATCH,DIRECT
-```
+每个 Wi-Fi Calling 规则文件包含:
+
+1. **域名规则 (DOMAIN-SUFFIX)**
+   - ePDG 服务器域名
+   - IMS 核心网域名
+   - 运营商相关域名
+
+2. **IP 段规则 (IP-CIDR)**
+   - 运营商 ePDG 服务器 IP 段
+   - 使用 `no-resolve` 避免 DNS 泄露
+
+3. **关键字规则 (DOMAIN-KEYWORD)**
+   - 运营商品牌关键字 (如 t-mobile)
+
+### 银行规则组成
+
+每个银行规则文件包含:
+
+1. **主域名**
+   - 官方网站域名
+   - 移动端域名
+
+2. **API 域名**
+   - 接口服务域名
+   - 在线银行域名
+
+3. **相关服务**
+   - 客户服务域名
+   - 支付网关域名
+
+---
+
+## 🔍 运营商 MCC/MNC 代码参考
+
+### 什么是 MCC/MNC?
+
+- **MCC (Mobile Country Code)**: 移动国家代码，3位数字
+- **MNC (Mobile Network Code)**: 移动网络代码，2-3位数字
+- 格式: `epdg.epc.mncXXX.mccYYY.pub.3gppnetwork.org`
+
+### 常用 MCC/MNC 列表
+
+| MCC | 国家 | MNC | 运营商 | 示例域名 |
+|-----|------|-----|--------|---------|
+| 310 | 🇺🇸 美国 | 260 | T-Mobile | epdg.epc.mnc260.mcc310.pub.3gppnetwork.org |
+| 234 | 🇬🇧 英国 | 015 | Vodafone UK | epdg.epc.mnc015.mcc234.pub.3gppnetwork.org |
+| 234 | 🇬🇧 英国 | 010 | O2 (Giffgaff) | epdg.epc.mnc010.mcc234.pub.3gppnetwork.org |
+| 454 | 🇭🇰 香港 | 000 | 3HK | epdg.epc.mnc000.mcc454.pub.3gppnetwork.org |
+| 262 | 🇩🇪 德国 | 002 | Vodafone DE | epdg.epc.mnc002.mcc262.pub.3gppnetwork.org |
+| 520 | 🇹🇭 泰国 | 003 | AIS | epdg.epc.mnc003.mcc520.pub.3gppnetwork.org |
+| 505 | 🇦🇺 澳洲 | 003 | Vodafone AU | epdg.epc.mnc003.mcc505.pub.3gppnetwork.org |
+| 530 | 🇳🇿 新西兰 | 001 | One NZ | epdg.epc.mnc001.mcc530.pub.3gppnetwork.org |
+
+完整列表请参考各规则文件注释。
 
 ---
 
@@ -241,125 +275,173 @@ rules:
 
 ### Wi-Fi Calling 无法连接
 
-1. **检查规则是否生效**
-   ```bash
-   # 查看 Mihomo 日志
-   tail -f /var/log/mihomo/mihomo.log
+#### 问题 1: 显示"无法连接到 Wi-Fi Calling"
+
+**可能原因:**
+- ❌ 规则配置为 DIRECT 而非对应地区节点
+- ❌ 节点质量差，延迟过高
+- ❌ 节点被运营商封禁
+
+**解决方案:**
+1. 确认使用对应地区节点
+   ```yaml
+   - RULE-SET,wificalling-us,🇺🇸 美国节点  # ✅
+   - RULE-SET,wificalling-us,DIRECT         # ❌
    ```
 
-2. **确认规则匹配**
-   - 在日志中搜索 ePDG 相关域名
-   - 确认流量走的是 DIRECT 而非代理
+2. 检查节点延迟
+   - 建议延迟 < 200ms
+   - 使用稳定的原生 IP 节点
 
-3. **验证 DNS 解析**
-   ```bash
-   # 测试域名解析
-   nslookup epdg.epc.att.net
-   ```
+3. 更换节点测试
 
-4. **检查 IP 规则**
-   - 确保所有 IP-CIDR 规则都包含 `no-resolve`
-   - 避免 DNS 泄露
+#### 问题 2: 连接后频繁断线
+
+**可能原因:**
+- 节点不稳定
+- 带宽不足
+- 节点 IP 被限制
+
+**解决方案:**
+1. 使用高质量节点
+2. 避免共享 IP 节点
+3. 联系节点提供商
+
+#### 问题 3: 规则没有生效
+
+**可能原因:**
+- 规则加载失败
+- 规则优先级错误
+- 缓存问题
+
+**解决方案:**
+```bash
+# 1. 检查规则是否加载
+cat /path/to/mihomo/ruleset/wificalling-us.yaml
+
+# 2. 清除缓存
+rm -rf /path/to/mihomo/ruleset/*.yaml
+
+# 3. 重启 Mihomo
+systemctl restart mihomo
+
+# 4. 查看日志
+tail -f /var/log/mihomo/mihomo.log
+```
 
 ### 银行应用无法登录
 
-1. **尝试切换策略**
-   - 如果用的代理,尝试切换为 DIRECT
-   - 如果用的 DIRECT,尝试切换为对应地区节点
+#### 问题 1: 提示"网络异常"
 
-2. **检查额外域名**
-   - 某些银行可能有额外的 API 域名
-   - 使用抓包工具 (如 Charles) 查找缺失的域名
+**解决方案:**
+1. 尝试切换策略
+   - 使用节点 → 尝试直连
+   - 使用直连 → 尝试节点
 
-3. **排除风控影响**
-   - 频繁切换 IP 可能触发银行风控
-   - 建议使用固定节点或直连
+2. 检查是否有额外域名
+   - 使用抓包工具查看请求
+   - 添加缺失的域名到规则
 
-### 规则更新失败
+#### 问题 2: 触发风控验证
 
-1. **检查文件 URL**
-   - 确认 URL 可以通过浏览器访问
-   - 检查是否使用 HTTPS 协议
+**原因:**
+- 频繁切换 IP 地址
+- 使用异常地区 IP
 
-2. **验证文件格式**
-   - 确保文件是 UTF-8 编码
-   - 检查是否有语法错误
-
-3. **清除缓存**
-   ```bash
-   # 删除缓存文件
-   rm -rf /path/to/mihomo/ruleset/*.yaml
-   # 重启 Mihomo
-   systemctl restart mihomo
-   ```
+**解决方案:**
+1. 使用固定节点
+2. 避免频繁切换代理
+3. 必要时联系银行客服
 
 ---
 
-## 📝 自定义规则
-
-### 添加新的运营商
-
-1. **确定 MCC/MNC 代码**
-   - MCC: 移动国家代码
-   - MNC: 移动网络代码
-
-2. **查找 ePDG 域名**
-   - 格式通常为: `epdg.epc.mncXXX.mccYYY.pub.3gppnetwork.org`
-   - 例如: `epdg.epc.mnc015.mcc234.pub.3gppnetwork.org` (Vodafone UK)
-
-3. **添加到对应规则文件**
-   ```
-   # 新运营商
-   DOMAIN-SUFFIX,epdg.epc.mncXXX.mccYYY.pub.3gppnetwork.org
-   IP-CIDR,xxx.xxx.xxx.xxx/xx,no-resolve
-   ```
-
-### 添加新的银行
-
-```
-# 新银行
-DOMAIN-SUFFIX,newbank.com
-DOMAIN-SUFFIX,api.newbank.com
-DOMAIN-SUFFIX,m.newbank.com
-```
-
----
-
-## 🔄 更新日志
+## 📝 规则更新日志
 
 ### 2026-01-05
 - ✅ 初始版本发布
 - ✅ 覆盖 15 个国家/地区
 - ✅ 支持 40+ 运营商
-- ✅ 包含 25+ 家银行
+- ✅ 包含 31 家银行
+
+### 后续更新计划
+- 🔄 定期验证规则有效性
+- 🔄 添加更多国家和运营商
+- 🔄 优化规则性能
 
 ---
 
-## 📞 支持与反馈
+## 🤝 贡献指南
+
+### 添加新运营商
+
+如果您想添加新的运营商规则，请提供:
+
+1. **基本信息**
+   - 运营商名称
+   - 所属国家/地区
+   - MCC/MNC 代码
+
+2. **技术信息**
+   - ePDG 域名 (格式: `epdg.epc.mncXXX.mccYYY.pub.3gppnetwork.org`)
+   - IP 地址段
+   - 相关域名
+
+3. **测试验证**
+   - 实际测试截图
+   - 连接日志
+   - 测试环境说明
 
 ### 报告问题
-- 如果发现规则失效或需要添加新运营商
-- 请提供详细的运营商信息和测试结果
 
-### 贡献规则
-- 欢迎提交 Pull Request
-- 请确保规则经过实际测试验证
+请在 [GitHub Issues](https://github.com/HenryChiao/the_clash_ruleset/issues) 中报告:
+
+- 规则失效
+- 新运营商需求
+- 错误和建议
 
 ---
 
-## 📄 许可证
+## 📚 参考资料
 
-本规则集遵循 MIT 许可证开源
+### Wi-Fi Calling 技术文档
+- [3GPP ePDG 规范](https://www.3gpp.org/)
+- [IMS/VoLTE 技术白皮书](https://www.gsma.com/)
+
+### Mihomo 配置文档
+- [Mihomo Wiki](https://wiki.metacubex.one/)
+- [Rule Providers 文档](https://wiki.metacubex.one/config/rule-providers/)
+
+### MCC/MNC 查询
+- [MCC-MNC 数据库](https://www.mcc-mnc.com/)
+- [ITU 官方列表](https://www.itu.int/)
 
 ---
 
 ## ⚠️ 免责声明
 
-- 这些规则仅供参考,使用前请自行测试
-- 运营商可能随时更改 ePDG 服务器地址
-- 作者不对使用这些规则造成的任何问题负责
+- 本规则集仅供学习研究使用
+- 使用前请自行测试验证
+- 运营商可能随时更改服务器配置
+- 使用者需自行承担使用风险
 - 请遵守当地法律法规和运营商服务条款
 
 ---
 
-**最后更新时间**: 2026年1月5日
+## 📞 技术支持
+
+如有问题，请通过以下方式联系:
+
+- 📧 GitHub Issues: [提交问题](https://github.com/HenryChiao/the_clash_ruleset/issues)
+- 💬 Discussions: [参与讨论](https://github.com/HenryChiao/the_clash_ruleset/discussions)
+
+---
+
+<div align="center">
+
+**最后更新时间**: 2026年1月7日
+
+Made with ❤️ by [HenryChiao](https://github.com/HenryChiao)
+
+[返回主页](../README.md)
+
+</div>
