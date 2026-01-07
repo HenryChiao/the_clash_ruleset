@@ -2,6 +2,8 @@
 
 地区分流规则集 - Wi-Fi Calling & 银行服务专用规则
 
+[English](./README_EN.md) | [简体中文](./README.md)
+
 ---
 
 ## 📋 规则列表
