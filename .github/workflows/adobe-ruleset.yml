@@ -1,0 +1,66 @@
+name: Generate Adobe Ruleset
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天 UTC 时间 02:00 运行
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  generate-adobe-rules:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Download and extract Adobe links
+        run: |
+          mkdir -p other/adobe
+          
+          # 下载并提取链接
+          echo "Downloading from macwk.cn..."
+          curl -fsSL https://macwk.cn/list.txt | grep -oE 'https?://[^\s]+' > temp1.txt || true
+          
+          echo "Downloading from macat.vip..."
+          curl -fsSL https://www.macat.vip/list.txt | grep -oE 'https?://[^\s]+' > temp2.txt || true
+          
+          # 合并、去重并排序
+          cat temp1.txt temp2.txt | sort -u > other/adobe/Adobe.list
+          
+          # 清理临时文件
+          rm -f temp1.txt temp2.txt
+          
+          echo "Total unique links: $(wc -l < other/adobe/Adobe.list)"
+          
+      - name: Download and unzip mihomo core
+        run: |
+          mihomo_version=$(curl -fsSL https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt)
+          echo "Downloading mihomo version: ${mihomo_version}"
+          wget "https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-v3-${mihomo_version}.gz" -O - | gzip -d > ./mihomo
+          chmod +x ./mihomo
+          
+      - name: Generate mihomo mrs file
+        run: |
+          # 为 Adobe.list 生成 mrs 文件
+          if [ -f "other/adobe/Adobe.list" ]; then
+            echo "Generating mrs file for Adobe.list..."
+            ./mihomo convert-ruleset domain text "other/adobe/Adobe.list" "other/adobe/Adobe.mrs"
+            echo "Adobe.mrs generated successfully"
+          else
+            echo "Adobe.list not found!"
+            exit 1
+          fi
+          
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add other/adobe/Adobe.list other/adobe/Adobe.mrs
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Adobe ruleset - $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
