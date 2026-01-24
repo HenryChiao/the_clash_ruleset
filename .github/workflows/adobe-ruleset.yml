@@ -89,9 +89,9 @@ jobs:
         run: |
           # 生成域名 YAML 文件
           if [ -s "other/adobe/block/domain/Adobe.list" ]; then
-            cat > other/adobe/block/domain/Adobe.yaml << 'EOF'
-payload:
-EOF
+            cat > other/adobe/block/domain/Adobe.yaml << 'DOMAINEOF'
+          payload:
+          DOMAINEOF
             while IFS= read -r line; do
               [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
               echo "  - '$line'" >> other/adobe/block/domain/Adobe.yaml
@@ -102,9 +102,9 @@ EOF
           
           # 生成 IP YAML 文件
           if [ -s "other/adobe/block/ip/Adobe.list" ]; then
-            cat > other/adobe/block/ip/Adobe.yaml << 'EOF'
-payload:
-EOF
+            cat > other/adobe/block/ip/Adobe.yaml << 'IPEOF'
+          payload:
+          IPEOF
             while IFS= read -r line; do
               [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
               # IP 需要添加 /32 CIDR 后缀
