@@ -15,10 +15,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
         
-      - name: Download and extract Adobe domains
+      - name: Download and extract Adobe domains and IPs
         run: |
-          mkdir -p other/adobe
+          mkdir -p other/adobe/block/domain
+          mkdir -p other/adobe/block/ip
           
           # 下载 hosts 文件
           echo "Downloading from macwk.cn..."
@@ -27,21 +31,32 @@ jobs:
           echo "Downloading from macat.vip..."
           curl -fsSL https://www.macat.vip/list.txt > temp2.txt
           
-          # 从 hosts 格式中提取域名（第二列）
-          # 过滤掉注释行、空行和无效行
-          {
-            awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9.]+$/ {print $2}' temp1.txt
-            awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9.]+$/ {print $2}' temp2.txt
-          } | \
-          # 去重并排序
-          sort -u > other/adobe/Adobe.list
+          # 合并两个文件
+          cat temp1.txt temp2.txt > temp_all.txt
+          
+          # 提取域名（第二列不是纯IP的）
+          awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(:[0-9]+)?$/ {print $2}' temp_all.txt | \
+          sort -u > other/adobe/block/domain/Adobe.list
+          
+          # 提取IP（第二列是纯IP或IP:端口的）
+          awk 'NF>=2 && !/^#/ && $2 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(:[0-9]+)?$/ {
+            # 去除端口号，只保留IP
+            split($2, a, ":");
+            print a[1];
+          }' temp_all.txt | \
+          sort -u > other/adobe/block/ip/Adobe.list
           
           # 清理临时文件
-          rm -f temp1.txt temp2.txt
+          rm -f temp1.txt temp2.txt temp_all.txt
           
-          echo "Total unique domains: $(wc -l < other/adobe/Adobe.list)"
+          echo "Total unique domains: $(wc -l < other/adobe/block/domain/Adobe.list)"
+          echo "Total unique IPs: $(wc -l < other/adobe/block/ip/Adobe.list)"
+          echo ""
           echo "Sample domains:"
-          head -10 other/adobe/Adobe.list
+          head -5 other/adobe/block/domain/Adobe.list
+          echo ""
+          echo "Sample IPs:"
+          head -5 other/adobe/block/ip/Adobe.list
           
       - name: Download and unzip mihomo core
         run: |
@@ -50,39 +65,61 @@ jobs:
           wget "https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-v3-${mihomo_version}.gz" -O - | gzip -d > ./mihomo
           chmod +x ./mihomo
           
-      - name: Generate mihomo mrs file
+      - name: Generate mihomo mrs files
         run: |
-          # 为 Adobe.list 生成 mrs 文件
-          if [ -f "other/adobe/Adobe.list" ]; then
-            echo "Generating mrs file for Adobe.list..."
-            ./mihomo convert-ruleset domain text "other/adobe/Adobe.list" "other/adobe/Adobe.mrs"
-            echo "Adobe.mrs generated successfully"
+          # 为域名生成 mrs 文件
+          if [ -s "other/adobe/block/domain/Adobe.list" ]; then
+            echo "Generating mrs file for domains..."
+            ./mihomo convert-ruleset domain text "other/adobe/block/domain/Adobe.list" "other/adobe/block/domain/Adobe.mrs"
+            echo "Domain mrs generated successfully"
           else
-            echo "Adobe.list not found!"
-            exit 1
+            echo "Warning: No domains found!"
           fi
           
-      - name: Generate mihomo YAML rule file
+          # 为 IP 生成 mrs 文件
+          if [ -s "other/adobe/block/ip/Adobe.list" ]; then
+            echo "Generating mrs file for IPs..."
+            ./mihomo convert-ruleset ipcidr text "other/adobe/block/ip/Adobe.list" "other/adobe/block/ip/Adobe.mrs"
+            echo "IP mrs generated successfully"
+          else
+            echo "Warning: No IPs found!"
+          fi
+          
+      - name: Generate mihomo YAML rule files
         run: |
-          cat > other/adobe/Adobe.yaml << 'EOF'
-          payload:
-          EOF
+          # 生成域名 YAML 文件
+          if [ -s "other/adobe/block/domain/Adobe.list" ]; then
+            cat > other/adobe/block/domain/Adobe.yaml << 'EOF'
+payload:
+EOF
+            while IFS= read -r line; do
+              [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+              echo "  - '$line'" >> other/adobe/block/domain/Adobe.yaml
+            done < other/adobe/block/domain/Adobe.list
+            
+            echo "Domain YAML generated with $(grep -c "^ " other/adobe/block/domain/Adobe.yaml) rules"
+          fi
           
-          # 从 Adobe.list 读取每一行并添加到 YAML
-          while IFS= read -r line; do
-            # 跳过空行和注释
-            [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
-            echo "  - '$line'" >> other/adobe/Adobe.yaml
-          done < other/adobe/Adobe.list
-          
-          echo "Adobe.yaml generated with $(grep -c "^ " other/adobe/Adobe.yaml) rules"
+          # 生成 IP YAML 文件
+          if [ -s "other/adobe/block/ip/Adobe.list" ]; then
+            cat > other/adobe/block/ip/Adobe.yaml << 'EOF'
+payload:
+EOF
+            while IFS= read -r line; do
+              [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+              # IP 需要添加 /32 CIDR 后缀
+              echo "  - '$line/32'" >> other/adobe/block/ip/Adobe.yaml
+            done < other/adobe/block/ip/Adobe.list
+            
+            echo "IP YAML generated with $(grep -c "^ " other/adobe/block/ip/Adobe.yaml) rules"
+          fi
           
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          git add other/adobe/Adobe.list other/adobe/Adobe.mrs other/adobe/Adobe.yaml
+          git add other/adobe/block/domain/ other/adobe/block/ip/
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
