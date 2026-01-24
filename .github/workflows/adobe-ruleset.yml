@@ -13,24 +13,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Download and extract Adobe links
+      - name: Download and extract Adobe domains
         run: |
           mkdir -p other/adobe
           
-          # 下载并提取链接
+          # 下载 hosts 文件
           echo "Downloading from macwk.cn..."
-          curl -fsSL https://macwk.cn/list.txt | grep -oE 'https?://[^\s]+' > temp1.txt || true
+          curl -fsSL https://macwk.cn/list.txt > temp1.txt
           
           echo "Downloading from macat.vip..."
-          curl -fsSL https://www.macat.vip/list.txt | grep -oE 'https?://[^\s]+' > temp2.txt || true
+          curl -fsSL https://www.macat.vip/list.txt > temp2.txt
           
-          # 合并、去重并排序
-          cat temp1.txt temp2.txt | sort -u > other/adobe/Adobe.list
+          # 从 hosts 格式中提取域名（第二列）
+          # 过滤掉注释行、空行和无效行
+          {
+            awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9.]+$/ {print $2}' temp1.txt
+            awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9.]+$/ {print $2}' temp2.txt
+          } | \
+          # 去重并排序
+          sort -u > other/adobe/Adobe.list
           
           # 清理临时文件
           rm -f temp1.txt temp2.txt
           
-          echo "Total unique links: $(wc -l < other/adobe/Adobe.list)"
+          echo "Total unique domains: $(wc -l < other/adobe/Adobe.list)"
+          echo "Sample domains:"
+          head -10 other/adobe/Adobe.list
           
       - name: Download and unzip mihomo core
         run: |
@@ -51,12 +59,27 @@ jobs:
             exit 1
           fi
           
+      - name: Generate mihomo YAML rule file
+        run: |
+          cat > other/adobe/Adobe.yaml << 'EOF'
+          payload:
+          EOF
+          
+          # 从 Adobe.list 读取每一行并添加到 YAML
+          while IFS= read -r line; do
+            # 跳过空行和注释
+            [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+            echo "  - '$line'" >> other/adobe/Adobe.yaml
+          done < other/adobe/Adobe.list
+          
+          echo "Adobe.yaml generated with $(grep -c "^ " other/adobe/Adobe.yaml) rules"
+          
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          git add other/adobe/Adobe.list other/adobe/Adobe.mrs
+          git add other/adobe/Adobe.list other/adobe/Adobe.mrs other/adobe/Adobe.yaml
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
