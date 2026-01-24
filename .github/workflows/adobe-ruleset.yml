@@ -19,41 +19,70 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
         
-      - name: Download and extract Adobe domains and IPs
+      - name: Download, Merge and Extract Rules
         run: |
-          # 创建目录
+          # 确保目录存在
           mkdir -p other/adobe/block/domain
           mkdir -p other/adobe/block/ip
           
-          # 下载 hosts 文件
+          # --- 1. 下载在线 Hosts 文件 ---
           echo "Downloading from macwk.cn..."
           curl -fsSL https://macwk.cn/list.txt > temp1.txt
           
           echo "Downloading from macat.vip..."
           curl -fsSL https://www.macat.vip/list.txt > temp2.txt
           
-          # 合并两个文件
+          # 合并两个在线临时文件
           cat temp1.txt temp2.txt > temp_all.txt
           
+          # --- 2. 处理域名 (Domain) ---
           echo "Processing Domains..."
-          # 提取域名（第二列不是纯IP的）
-          awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(:[0-9]+)?$/ {print $2}' temp_all.txt | \
+          
+          # 2.1 从在线列表提取域名
+          awk 'NF>=2 && !/^#/ && $2 !~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(:[0-9]+)?$/ {print $2}' temp_all.txt > temp_domains_raw.txt
+          
+          # 2.2 合并本地自定义域名列表 (adddomain.list)
+          if [ -f "other/adobe/block/adddomain.list" ]; then
+            echo "Found adddomain.list, merging local domains..."
+            cat "other/adobe/block/adddomain.list" >> temp_domains_raw.txt
+          else
+            echo "No local adddomain.list found, skipping merge."
+          fi
+          
+          # 2.3 清理、去重并输出最终文件
+          cat temp_domains_raw.txt | \
           sed 's/\.$//' | \
           grep -v '^[[:space:]]*$' | \
           sort -u > other/adobe/block/domain/Adobe.list
           
+          # --- 3. 处理 IP (IP-CIDR) ---
           echo "Processing IPs..."
-          # 提取IP（第二列是纯IP或IP:端口的）
-          # 去除端口号，只保留IP，并添加 /32 CIDR
+          
+          # 3.1 从在线列表提取 IP 并添加 /32
           awk 'NF>=2 && !/^#/ && $2 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(:[0-9]+)?$/ {
             split($2, a, ":");
             print a[1] "/32";
-          }' temp_all.txt | \
-          grep -v '^[[:space:]]*$' | \
-          sort -u > other/adobe/block/ip/Adobe.list
+          }' temp_all.txt > temp_ips_raw.txt
           
-          # 清理临时文件
-          rm -f temp1.txt temp2.txt temp_all.txt
+          # 3.2 合并本地自定义 IP 列表 (addip.list)
+          if [ -f "other/adobe/block/addip.list" ]; then
+            echo "Found addip.list, merging local IPs..."
+            # 使用 awk 智能处理：如果是纯IP自动加/32，如果是CIDR则保持原样
+            awk '{
+              # 跳过空行和注释
+              if ($0 ~ /^[[:space:]]*$/ || $0 ~ /^#/) next;
+              # 如果包含 / 则直接打印，否则添加 /32
+              if ($0 ~ /\//) print $0; else print $0 "/32";
+            }' "other/adobe/block/addip.list" >> temp_ips_raw.txt
+          else
+            echo "No local addip.list found, skipping merge."
+          fi
+          
+          # 3.3 去重并输出最终文件
+          cat temp_ips_raw.txt | grep -v '^[[:space:]]*$' | sort -u > other/adobe/block/ip/Adobe.list
+          
+          # --- 4. 清理临时文件 ---
+          rm -f temp1.txt temp2.txt temp_all.txt temp_domains_raw.txt temp_ips_raw.txt
           
           echo "Total unique domains: $(wc -l < other/adobe/block/domain/Adobe.list)"
           echo "Total unique IPs: $(wc -l < other/adobe/block/ip/Adobe.list)"
@@ -76,7 +105,7 @@ jobs:
             echo "Warning: No domains found!"
           fi
           
-          # 为 IP 生成 mrs 文件 (注意这里用 ipcidr)
+          # 为 IP 生成 mrs 文件
           if [ -s "other/adobe/block/ip/Adobe.list" ]; then
             echo "Generating mrs file for IPs..."
             ./mihomo convert-ruleset ipcidr text "other/adobe/block/ip/Adobe.list" "other/adobe/block/ip/Adobe.mrs"
@@ -106,7 +135,6 @@ jobs:
           IPEOF
             while IFS= read -r line; do
               [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
-              # .list 文件里已经包含 /32 了，这里直接写入即可
               echo "  - '$line'" >> other/adobe/block/ip/Adobe.yaml
             done < other/adobe/block/ip/Adobe.list
             echo "IP YAML generated"
@@ -123,6 +151,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update Adobe ruleset - $(date +'%Y-%m-%d %H:%M:%S')"
+            git commit -m "Update Adobe ruleset (Integrated local lists) - $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           fi
