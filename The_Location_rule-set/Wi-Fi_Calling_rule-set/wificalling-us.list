@@ -8,6 +8,7 @@ DOMAIN-SUFFIX,epdg.epc.att-idns.net
 DOMAIN-SUFFIX,sentitlement2.mobile.att.net
 DOMAIN-SUFFIX,vvm.mobile.att.net
 IP-CIDR,107.122.31.0/32,no-resolve
+IP-CIDR,107.64.0.0/10,no-resolve
 
 # T-Mobile / Ultra Mobile / Helium Mobile
 DOMAIN-SUFFIX,crl.t-mobile.com

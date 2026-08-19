@@ -44,7 +44,7 @@ rule-providers:
   wificalling:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling.yaml"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling.yaml"
     path: ./ruleset/wificalling.yaml
     interval: 86400
 
@@ -86,7 +86,7 @@ rule-providers:
   wificalling-att:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us-att.yaml"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-us-att.yaml"
     path: ./ruleset/wificalling-att.yaml
     interval: 86400
   
@@ -94,7 +94,7 @@ rule-providers:
   wificalling-vodafone:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-uk-vodafone.yaml"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-uk-vodafone.yaml"
     path: ./ruleset/wificalling-vodafone.yaml
     interval: 86400
 
@@ -135,7 +135,7 @@ rule-providers:
   wificalling:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling.yaml"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling.yaml"
     path: ./ruleset/wificalling.yaml
     interval: 86400
 

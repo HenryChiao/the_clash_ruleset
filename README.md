@@ -2,10 +2,10 @@
 
 <div align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/HenryChiao/the_clash_ruleset)
-![GitHub stars](https://img.shields.io/github/stars/HenryChiao/the_clash_ruleset)
-![GitHub forks](https://img.shields.io/github/forks/HenryChiao/the_clash_ruleset)
-![License](https://img.shields.io/github/license/HenryChiao/the_clash_ruleset)
+![GitHub last commit](https://img.shields.io/github/last-commit/CherryMian/the_clash_ruleset)
+![GitHub stars](https://img.shields.io/github/stars/CherryMian/the_clash_ruleset)
+![GitHub forks](https://img.shields.io/github/forks/CherryMian/the_clash_ruleset)
+![License](https://img.shields.io/github/license/CherryMian/the_clash_ruleset)
 
 **精心维护的 Mihomo/Clash 规则集合**
 
@@ -55,7 +55,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 
@@ -71,7 +71,7 @@ rules:
 ### CDN 加速 (国内推荐)
 
 ```yaml
-url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
+url: "https://cdn.jsdelivr.net/gh/CherryMian/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
 ```
 
 **更多配置示例和详细说明**: [The_Location_rule-set/README.md](./The_Location_rule-set/README.md)
@@ -109,8 +109,8 @@ url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location
 ## 🔗 相关链接
 
 - 📖 [详细使用文档](./The_Location_rule-set/README.md)
-- 🐛 [问题反馈](https://github.com/HenryChiao/the_clash_ruleset/issues)
-- 💬 [讨论交流](https://github.com/HenryChiao/the_clash_ruleset/discussions)
+- 🐛 [问题反馈](https://github.com/CherryMian/the_clash_ruleset/issues)
+- 💬 [讨论交流](https://github.com/CherryMian/the_clash_ruleset/discussions)
 
 ---
 

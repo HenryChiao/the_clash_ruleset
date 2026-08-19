@@ -29,6 +29,7 @@ IP-CIDR,87.194.88.0/24,no-resolve
 # CTEXCEL
 DOMAIN-SUFFIX,epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
 IP-CIDR,31.94.0.0/16,no-resolve
+DOMAIN-SUFFIX,go-esim.com
 
 # 3UK
 DOMAIN-SUFFIX,epdg.epc.mnc020.mcc234.pub.3gppnetwork.org

@@ -19,6 +19,9 @@ IP-CIDR,194.25.0.68/32,no-resolve
 
 # O2 Germany
 DOMAIN-SUFFIX,epdg.epc.mnc009.mcc262.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc262.pub.3gppnetwork.org
+IP-CIDR,213.20.0.0/16,no-resolve
+IP-CIDR,62.52.0.0/14,no-resolve
 
 # E-Plus Germany
 DOMAIN-SUFFIX,epdg.epc.mnc004.mcc262.pub.3gppnetwork.org

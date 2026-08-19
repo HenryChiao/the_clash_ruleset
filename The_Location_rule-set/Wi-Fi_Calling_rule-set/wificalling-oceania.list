@@ -1,6 +1,6 @@
 # 大洋洲 Wi-Fi Calling 规则
 # 适用于: 澳大利亚 & 新西兰运营商
-# 最后更新: 2026-01-05
+# 最后更新: 2026-08-04
 
 # ========== 澳大利亚 ==========
 
@@ -13,7 +13,8 @@ DOMAIN-SUFFIX,epdg.epc.mnc002.mcc505.pub.3gppnetwork.org
 
 # Vodafone AU / felix / amaysim
 DOMAIN-SUFFIX,epdg.epc.mnc003.mcc505.pub.3gppnetwork.org
-DOMAIN-SUFFIX,ents.mnc003.mcc505.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.mnc003.mcc505.pub.3gppnetwork.org
+IP-CIDR,210.49.0.0/16,no-resolve
 
 # ========== 新西兰 ==========
 

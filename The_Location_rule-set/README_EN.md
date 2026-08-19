@@ -6,6 +6,18 @@ Location-based routing rules - Specialized rules for Wi-Fi Calling & Banking Ser
 
 ---
 
+## 🧭 About This Branch
+
+This repository is a personal integration branch based on [CherryMian/the_clash_ruleset](https://github.com/CherryMian/the_clash_ruleset). The goal is to preserve the upstream project's high-quality rule structure and categorization approach while reorganizing, supplementing, and documenting the rules according to personal usage needs so they are easier to apply and maintain.
+
+This branch focuses on:
+- Keeping the original organization for Wi-Fi Calling, banking services, and Apple service rules
+- Providing a clearer directory structure and rule descriptions for easier lookup and deployment
+- Adding practical notes and examples that suit personal use cases
+- Maintaining compatibility with the upstream naming conventions and rule purposes for easier comparison and migration
+
+---
+
 ## 📋 Rule List
 
 ### 🍎 Apple Services
@@ -30,15 +42,15 @@ Location-based routing rules - Specialized rules for Wi-Fi Calling & Banking Ser
 |----------|-----------|----------------|-------|
 | `wificalling-uk.list` | 🇬🇧 UK | Vodafone UK<br>EE (CMLink UK)<br>Giffgaff<br>3UK<br>VOXI<br>CTEXCEL | 35 |
 | `wificalling-de.list` | 🇩🇪 Germany | Vodafone DE<br>O2<br>E-Plus<br>Drillisch (1&1) | 27 |
-| `wificalling-europe.list` | 🇳🇱 Netherlands<br>🇫🇮 Finland<br>🇮🇸 Iceland<br>🇱🇹 Lithuania<br>🇺🇦 Ukraine | Vodafone NL<br>Elisa<br>Nova<br>Pildyk<br>lifecell | 10 |
+| `wificalling-europe.list` | 🇳🇱 Netherlands<br>🇫🇮 Finland<br>🇮🇸 Iceland<br>🇱🇹 Lithuania<br>🇺🇦 Ukraine | Vodafone NL<br>KPN / SIMYO<br>Elisa<br>Nova<br>Pildyk<br>lifecell | 10 |
 
 #### Asia-Pacific
 
 | Filename | Countries | Major Carriers | Rules |
 |----------|-----------|----------------|-------|
 | `wificalling-hk.list` | 🇭🇰 Hong Kong | 3HK (Three)<br>CSL<br>HKT / 1010 / One2Free | 17 |
-| `wificalling-asia.list` | 🇹🇭 Thailand<br>🇲🇾 Malaysia<br>🇱🇰 Sri Lanka | AIS<br>Maxis<br>Digi<br>Dialog | 7 |
-| `wificalling-oceania.list` | 🇦🇺 Australia<br>🇳🇿 New Zealand | ALDI<br>Optus<br>Vodafone AU<br>One NZ<br>2degrees<br>Spark | 9 |
+| `wificalling-asia.list` | 🇹🇭 Thailand<br>🇲🇾 Malaysia<br>🇱🇰 Sri Lanka | AIS<br>Maxis<br>Digi<br>Dialog<br>Philippines-related rules | 7 |
+| `wificalling-oceania.list` | 🇦🇺 Australia<br>🇳🇿 New Zealand | ALDI<br>Optus<br>Vodafone AU / felix / amaysim<br>One NZ<br>2degrees<br>Spark / Skinny | 9 |
 
 ---
 
@@ -63,7 +75,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 
@@ -71,7 +83,7 @@ rule-providers:
   wificalling-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
     path: ./ruleset/wificalling-hk.yaml
     interval: 86400
 
@@ -79,7 +91,7 @@ rule-providers:
   bank-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
     path: ./ruleset/bank-hk.yaml
     interval: 86400
 
@@ -105,7 +117,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
+    url: "https://cdn.jsdelivr.net/gh/CherryMian/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 ```
@@ -395,7 +407,7 @@ To add new carrier rules, please provide:
 
 ### Reporting Issues
 
-Please report on [GitHub Issues](https://github.com/HenryChiao/the_clash_ruleset/issues):
+Please report on [GitHub Issues](https://github.com/CherryMian/the_clash_ruleset/issues):
 
 - Rule failures
 - New carrier requests
@@ -433,8 +445,8 @@ Please report on [GitHub Issues](https://github.com/HenryChiao/the_clash_ruleset
 
 For issues, please contact via:
 
-- 📧 GitHub Issues: [Submit Issue](https://github.com/HenryChiao/the_clash_ruleset/issues)
-- 💬 Discussions: [Join Discussion](https://github.com/HenryChiao/the_clash_ruleset/discussions)
+- 📧 GitHub Issues: [Submit Issue](https://github.com/CherryMian/the_clash_ruleset/issues)
+- 💬 Discussions: [Join Discussion](https://github.com/CherryMian/the_clash_ruleset/discussions)
 
 ---
 

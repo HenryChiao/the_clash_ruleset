@@ -6,6 +6,18 @@
 
 ---
 
+## 🧭 关于本分支
+
+本仓库是基于 [CherryMian/the_clash_ruleset](https://github.com/CherryMian/the_clash_ruleset) 进行的个人整合分支。目标是在保留上游项目高质量规则结构与分类思路的基础上，结合个人实际使用场景，对规则进行整理、补充和说明，使其更适合日常使用与后续维护。
+
+本分支重点包括：
+- 保留原有的 Wi-Fi Calling、银行服务、Apple 服务规则组织方式
+- 以清晰的目录结构和规则说明，方便直接查找与配置
+- 补充适合个人使用的说明和示例，减少使用时的理解成本
+- 尽量保持与上游规则文件命名和用途的一致性，便于对比和迁移
+
+---
+
 ## 📋 规则列表
 
 ### 🍎 Apple 服务
@@ -30,15 +42,15 @@
 |--------|----------|-----------|--------|
 | `wificalling-uk.list` | 🇬🇧 英国 | Vodafone UK<br>EE (CMLink UK)<br>Giffgaff<br>3UK<br>VOXI<br>CTEXCEL | 35 |
 | `wificalling-de.list` | 🇩🇪 德国 | Vodafone DE<br>O2<br>E-Plus<br>Drillisch (1&1) | 27 |
-| `wificalling-europe.list` | 🇳🇱 荷兰<br>🇫🇮 芬兰<br>🇮🇸 冰岛<br>🇱🇹 立陶宛<br>🇺🇦 乌克兰 | Vodafone NL<br>Elisa<br>Nova<br>Pildyk<br>lifecell | 10 |
+| `wificalling-europe.list` | 🇳🇱 荷兰<br>🇫🇮 芬兰<br>🇮🇸 冰岛<br>🇱🇹 立陶宛<br>🇺🇦 乌克兰 | Vodafone NL<br>KPN / SIMYO<br>Elisa<br>Nova<br>Pildyk<br>lifecell | 10 |
 
 #### 亚太地区
 
 | 文件名 | 覆盖国家 | 主要运营商 | 规则数 |
 |--------|----------|-----------|--------|
 | `wificalling-hk.list` | 🇭🇰 香港 | 3HK (Three)<br>CSL<br>HKT / 1010 / One2Free | 17 |
-| `wificalling-asia.list` | 🇹🇭 泰国<br>🇲🇾 马来西亚<br>🇱🇰 斯里兰卡 | AIS<br>Maxis<br>Digi<br>Dialog | 7 |
-| `wificalling-oceania.list` | 🇦🇺 澳大利亚<br>🇳🇿 新西兰 | ALDI<br>Optus<br>Vodafone AU<br>One NZ<br>2degrees<br>Spark | 9 |
+| `wificalling-asia.list` | 🇹🇭 泰国<br>🇲🇾 马来西亚<br>🇱🇰 斯里兰卡 | AIS<br>Maxis<br>Digi<br>Dialog<br>菲律宾相关规则 | 7 |
+| `wificalling-oceania.list` | 🇦🇺 澳大利亚<br>🇳🇿 新西兰 | ALDI<br>Optus<br>Vodafone AU / felix / amaysim<br>One NZ<br>2degrees<br>Spark / Skinny | 9 |
 
 ---
 
@@ -63,7 +75,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 
@@ -71,7 +83,7 @@ rule-providers:
   wificalling-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
     path: ./ruleset/wificalling-hk.yaml
     interval: 86400
 
@@ -79,7 +91,7 @@ rule-providers:
   bank-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
+    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
     path: ./ruleset/bank-hk.yaml
     interval: 86400
 
@@ -105,7 +117,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
+    url: "https://cdn.jsdelivr.net/gh/CherryMian/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 ```
@@ -395,7 +407,7 @@ tail -f /var/log/mihomo/mihomo.log
 
 ### 报告问题
 
-请在 [GitHub Issues](https://github.com/HenryChiao/the_clash_ruleset/issues) 中报告:
+请在 [GitHub Issues](https://github.com/CherryMian/the_clash_ruleset/issues) 中报告:
 
 - 规则失效
 - 新运营商需求
@@ -433,16 +445,16 @@ tail -f /var/log/mihomo/mihomo.log
 
 如有问题，请通过以下方式联系:
 
-- 📧 GitHub Issues: [提交问题](https://github.com/HenryChiao/the_clash_ruleset/issues)
-- 💬 Discussions: [参与讨论](https://github.com/HenryChiao/the_clash_ruleset/discussions)
+- 📧 GitHub Issues: [提交问题](https://github.com/CherryMian/the_clash_ruleset/issues)
+- 💬 Discussions: [参与讨论](https://github.com/CherryMian/the_clash_ruleset/discussions)
 
 ---
 
 <div align="center">
 
-**最后更新时间**: 2026年1月7日
+**最后更新时间**: 2026年8月4日
 
-Made with ❤️ by [HenryChiao](https://github.com/HenryChiao)
+Made with ❤️ by [CherryMian](https://github.com/CherryMian)
 
 [返回主页](../README.md)
 
