@@ -8,7 +8,7 @@ Location-based routing rules - Specialized rules for Wi-Fi Calling & Banking Ser
 
 ## 🧭 About This Branch
 
-This repository is a personal integration branch based on [CherryMian/the_clash_ruleset](https://github.com/CherryMian/the_clash_ruleset). The goal is to preserve the upstream project's high-quality rule structure and categorization approach while reorganizing, supplementing, and documenting the rules according to personal usage needs so they are easier to apply and maintain.
+This repository is a personal integration branch based on [HenryChiao/the_clash_ruleset](https://github.com/HenryChiao/the_clash_ruleset). The goal is to preserve the upstream project's high-quality rule structure and categorization approach while reorganizing, supplementing, and documenting the rules according to personal usage needs so they are easier to apply and maintain.
 
 This branch focuses on:
 - Keeping the original organization for Wi-Fi Calling, banking services, and Apple service rules
@@ -75,7 +75,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 
@@ -83,7 +83,7 @@ rule-providers:
   wificalling-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
     path: ./ruleset/wificalling-hk.yaml
     interval: 86400
 
@@ -91,7 +91,7 @@ rule-providers:
   bank-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
     path: ./ruleset/bank-hk.yaml
     interval: 86400
 
@@ -117,7 +117,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/CherryMian/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
+    url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 ```
@@ -407,7 +407,7 @@ To add new carrier rules, please provide:
 
 ### Reporting Issues
 
-Please report on [GitHub Issues](https://github.com/CherryMian/the_clash_ruleset/issues):
+Please report on [GitHub Issues](https://github.com/HenryChiao/the_clash_ruleset/issues):
 
 - Rule failures
 - New carrier requests
@@ -445,8 +445,8 @@ Please report on [GitHub Issues](https://github.com/CherryMian/the_clash_ruleset
 
 For issues, please contact via:
 
-- 📧 GitHub Issues: [Submit Issue](https://github.com/CherryMian/the_clash_ruleset/issues)
-- 💬 Discussions: [Join Discussion](https://github.com/CherryMian/the_clash_ruleset/discussions)
+- 📧 GitHub Issues: [Submit Issue](https://github.com/HenryChiao/the_clash_ruleset/issues)
+- 💬 Discussions: [Join Discussion](https://github.com/HenryChiao/the_clash_ruleset/discussions)
 
 ---
 
