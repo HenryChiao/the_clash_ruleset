@@ -8,7 +8,7 @@
 
 ## 🧭 关于本分支
 
-本仓库是基于 [CherryMian/the_clash_ruleset](https://github.com/CherryMian/the_clash_ruleset) 进行的个人整合分支。目标是在保留上游项目高质量规则结构与分类思路的基础上，结合个人实际使用场景，对规则进行整理、补充和说明，使其更适合日常使用与后续维护。
+本仓库是基于 [HenryChiao/the_clash_ruleset](https://github.com/HenryChiao/the_clash_ruleset) 进行的个人整合分支。目标是在保留上游项目高质量规则结构与分类思路的基础上，结合个人实际使用场景，对规则进行整理、补充和说明，使其更适合日常使用与后续维护。
 
 本分支重点包括：
 - 保留原有的 Wi-Fi Calling、银行服务、Apple 服务规则组织方式
@@ -75,7 +75,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 
@@ -83,7 +83,7 @@ rule-providers:
   wificalling-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/wificalling-hk.list"
     path: ./ruleset/wificalling-hk.yaml
     interval: 86400
 
@@ -91,7 +91,7 @@ rule-providers:
   bank-hk:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/CherryMian/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
+    url: "https://raw.githubusercontent.com/HenryChiao/the_clash_ruleset/main/The_Location_rule-set/bank-hk.list"
     path: ./ruleset/bank-hk.yaml
     interval: 86400
 
@@ -117,7 +117,7 @@ rule-providers:
   wificalling-us:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/CherryMian/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
+    url: "https://cdn.jsdelivr.net/gh/HenryChiao/the_clash_ruleset@main/The_Location_rule-set/wificalling-us.list"
     path: ./ruleset/wificalling-us.yaml
     interval: 86400
 ```
@@ -407,7 +407,7 @@ tail -f /var/log/mihomo/mihomo.log
 
 ### 报告问题
 
-请在 [GitHub Issues](https://github.com/CherryMian/the_clash_ruleset/issues) 中报告:
+请在 [GitHub Issues](https://github.com/HenryChiao/the_clash_ruleset/issues) 中报告:
 
 - 规则失效
 - 新运营商需求
@@ -445,8 +445,8 @@ tail -f /var/log/mihomo/mihomo.log
 
 如有问题，请通过以下方式联系:
 
-- 📧 GitHub Issues: [提交问题](https://github.com/CherryMian/the_clash_ruleset/issues)
-- 💬 Discussions: [参与讨论](https://github.com/CherryMian/the_clash_ruleset/discussions)
+- 📧 GitHub Issues: [提交问题](https://github.com/HenryChiao/the_clash_ruleset/issues)
+- 💬 Discussions: [参与讨论](https://github.com/HenryChiao/the_clash_ruleset/discussions)
 
 ---
 
@@ -454,7 +454,7 @@ tail -f /var/log/mihomo/mihomo.log
 
 **最后更新时间**: 2026年8月4日
 
-Made with ❤️ by [CherryMian](https://github.com/CherryMian)
+Made with ❤️ by [HenryChiao](https://github.com/HenryChiao)
 
 [返回主页](../README.md)
 
