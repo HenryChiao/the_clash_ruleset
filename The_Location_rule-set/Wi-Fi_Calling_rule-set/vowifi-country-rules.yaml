@@ -1,0 +1,1454 @@
+# VoWiFi / Wi-Fi Calling Rules by Country
+# Telegram: @eSIMhelp
+# Sources: Samsung XML, Pixel CarrierSettings, Xiaomi Qualcomm MCFG
+# Merged, validated and case-insensitively deduplicated from the four source snapshots.
+
+# ============================================================
+# 🇺🇸 US - United States Wi-Fi Calling Rules (27)
+# ============================================================
+
+# Generic IR92 (9 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc313.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc130.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc290.mcc312.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc380.mcc312.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc450.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc580.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc650.mcc311.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc720.mcc312.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.pinecellular.com
+# T-Mobile (4 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc210.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc310.mcc310.pub.3gppnetwork.org
+# AT&T (2 rules)
+DOMAIN-SUFFIX,epdg.epc.att.net
+DOMAIN-SUFFIX,epdg.epc.firstnet.com
+# Sprint (2 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc120.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc530.mcc312.pub.3gppnetwork.org
+# ASTCA (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc120.mcc313.pub.3gppnetwork.org
+# Altice (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc390.mcc313.pub.3gppnetwork.org
+# Altice / GCI / GTA / Generic IR92 / USCC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc311.pub.3gppnetwork.org
+# Appalachian (1 rule)
+DOMAIN-SUFFIX,epdg.myawi.com
+# Cellcommno (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc840.mcc311.pub.3gppnetwork.org
+# Cspire (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc230.mcc311.pub.3gppnetwork.org
+# Dish (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc340.mcc313.pub.3gppnetwork.org
+# ITE (1 rule)
+DOMAIN-SUFFIX,epdg.pti.mnc110.mcc310.pub.3gppnetwork.org
+# Union (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc310.pub.3gppnetwork.org
+# Verizon (1 rule)
+DOMAIN-SUFFIX,wo.vzwwo.com
+
+# ============================================================
+# 🇬🇧 GB - United Kingdom Wi-Fi Calling Rules (11)
+# ============================================================
+
+# BTOP / EE / Virgin (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc030.mcc234.pub.3gppnetwork.org
+# EEESN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc071.mcc234.pub.3gppnetwork.org
+# Lebara (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc087.mcc234.pub.3gppnetwork.org
+# Sky (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc057.mcc234.pub.3gppnetwork.org
+# Spusu (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc040.mcc234.pub.3gppnetwork.org
+# Sure (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc055.mcc234.pub.3gppnetwork.org
+# Tango (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc053.mcc234.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org
+# Three (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc234.pub.3gppnetwork.org
+# Virgin (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc038.mcc234.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+
+# ============================================================
+# 🇷🇺 RU - Russian Federation Wi-Fi Calling Rules (10)
+# ============================================================
+
+# Motiv (2 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc035.mcc250.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.motivtelecom.ru
+# Alfa (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc019.mcc250.pub.3gppnetwork.org
+# Beeline (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc099.mcc250.pub.3gppnetwork.org
+# MTS (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc250.pub.3gppnetwork.org
+# Mega Fon (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc250.pub.3gppnetwork.org
+# NTC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc016.mcc250.pub.3gppnetwork.org
+# Sberbank-Telecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc250.pub.3gppnetwork.org
+# TELE2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc250.pub.3gppnetwork.org
+# Tattelecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc027.mcc250.pub.3gppnetwork.org
+
+# ============================================================
+# 🇫🇷 FR - France Wi-Fi Calling Rules (9)
+# ============================================================
+
+# Orange (3 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc647.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc208.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc340.pub.3gppnetwork.org
+# ACMOSS (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc183.mcc208.pub.3gppnetwork.org
+# Bouygues (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc208.pub.3gppnetwork.org
+# Coriolis (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc027.mcc208.pub.3gppnetwork.org
+# Free (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc015.mcc208.pub.3gppnetwork.org
+# NRJ (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc026.mcc208.pub.3gppnetwork.org
+# SFR (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc208.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇦 CA - Canada Wi-Fi Calling Rules (8)
+# ============================================================
+
+# Bell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc610.mcc302.pub.3gppnetwork.org
+# ESK (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc270.mcc302.pub.3gppnetwork.org
+# RWC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc370.mcc302.pub.3gppnetwork.org
+# Rogers (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc720.mcc302.pub.3gppnetwork.org
+# Sask Tel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc780.mcc302.pub.3gppnetwork.org
+# Shaw (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc490.mcc302.pub.3gppnetwork.org
+# Telus (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc220.mcc302.pub.3gppnetwork.org
+# Video Tron (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc500.mcc302.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇱 IL - Israel Wi-Fi Calling Rules (8)
+# ============================================================
+
+# Annatel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc026.mcc425.pub.3gppnetwork.org
+# Cellcom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc425.pub.3gppnetwork.org
+# Hot-mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc425.pub.3gppnetwork.org
+# Partner (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc425.pub.3gppnetwork.org
+# Pelephone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc425.pub.3gppnetwork.org
+# Telzar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc019.mcc425.pub.3gppnetwork.org
+# Wecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc009.mcc425.pub.3gppnetwork.org
+# Xphone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc021.mcc425.pub.3gppnetwork.org
+
+# ============================================================
+# 🇪🇸 ES - Spain Wi-Fi Calling Rules (7)
+# ============================================================
+
+# Vodafone (2 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc214.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc214.pub.3gppnetwork.org
+# Digi (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc022.mcc214.pub.3gppnetwork.org
+# Movistar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc214.pub.3gppnetwork.org
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc214.pub.3gppnetwork.org
+# PTV (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc015.mcc214.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc014.mcc214.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇭 CH - Switzerland Wi-Fi Calling Rules (6)
+# ============================================================
+
+# UPC (2 rules)
+DOMAIN-SUFFIX,epdg-ch.upcmobile.com
+DOMAIN-SUFFIX,epdg.epc.mnc053.mcc228.pub.3gppnetwork.org
+# Salt (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc228.pub.3gppnetwork.org
+# Spusu (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc071.mcc228.pub.3gppnetwork.org
+# Sunrise (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc228.pub.3gppnetwork.org
+# Swisscom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc228.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇳 IN - India Wi-Fi Calling Rules (6)
+# ============================================================
+
+# AIRTEL (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc404.pub.3gppnetwork.org
+# BSNL (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc034.mcc404.pub.3gppnetwork.org
+# IDEA (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc022.mcc404.pub.3gppnetwork.org
+# Jio (1 rule)
+DOMAIN-SUFFIX,vowifi.jio.com
+# RJIL (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc840.mcc405.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc086.mcc404.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇾 MY - Malaysia Wi-Fi Calling Rules (6)
+# ============================================================
+
+# Celcom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc019.mcc502.pub.3gppnetwork.org
+# DIGI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc016.mcc502.pub.3gppnetwork.org
+# Maxis (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc012.mcc502.pub.3gppnetwork.org
+# P1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc153.mcc502.pub.3gppnetwork.org
+# UMobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc018.mcc502.pub.3gppnetwork.org
+# YTL (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc152.mcc502.pub.3gppnetwork.org
+
+# ============================================================
+# 🇳🇱 NL - Netherlands Wi-Fi Calling Rules (6)
+# ============================================================
+
+# Kpn (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc008.mcc204.pub.3gppnetwork.org
+# Lebara (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc017.mcc204.pub.3gppnetwork.org
+# Mvno (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc204.pub.3gppnetwork.org
+# Tele2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc204.pub.3gppnetwork.org
+# Tmobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc016.mcc204.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc204.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇪 SE - Sweden Wi-Fi Calling Rules (6)
+# ============================================================
+
+# 3 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc240.pub.3gppnetwork.org
+# Telavox (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc240.pub.3gppnetwork.org
+# Tele2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc240.pub.3gppnetwork.org
+# Telecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc288.pub.3gppnetwork.org
+# Telia (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc240.pub.3gppnetwork.org
+# Vimla (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc008.mcc240.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇪 BE - Belgium Wi-Fi Calling Rules (5)
+# ============================================================
+
+# Base (1 rule)
+DOMAIN-SUFFIX,epdg.telco.telenet-ops.be
+# DIGI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc012.mcc206.pub.3gppnetwork.org
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc206.pub.3gppnetwork.org
+# Proximus (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc206.pub.3gppnetwork.org
+# Telavox (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc014.mcc206.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇷 BR - Brazil Wi-Fi Calling Rules (5)
+# ============================================================
+
+# Americanet (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc026.mcc724.pub.3gppnetwork.org
+# Brisanet (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc077.mcc724.pub.3gppnetwork.org
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc005.mcc724.pub.3gppnetwork.org
+# Unifique (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc029.mcc724.pub.3gppnetwork.org
+# Vivo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc724.pub.3gppnetwork.org
+
+# ============================================================
+# 🇩🇪 DE - Germany Wi-Fi Calling Rules (5)
+# ============================================================
+
+# 1&1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc023.mcc262.pub.3gppnetwork.org
+# Lebara (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc014.mcc262.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc262.pub.3gppnetwork.org
+# Telekom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc262.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc262.pub.3gppnetwork.org
+
+# ============================================================
+# 🇭🇰 HK - Hong Kong Wi-Fi Calling Rules (5)
+# ============================================================
+
+# 3 HK (1 rule)
+DOMAIN-SUFFIX,wlan.three.com.hk
+# CMHK (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc012.mcc454.pub.3gppnetwork.org
+# CSL / PCCW (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+# CUHK (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc454.pub.3gppnetwork.org
+# Smar Tone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc454.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇹 IT - Italy Wi-Fi Calling Rules (5)
+# ============================================================
+
+# Fastweb (1 rule)
+DOMAIN-SUFFIX,epdg.fastweb.it
+# Iliad (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc222.pub.3gppnetwork.org
+# Spusu (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc056.mcc222.pub.3gppnetwork.org
+# Tim (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc222.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc222.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇦 SA - Saudi Arabia Wi-Fi Calling Rules (5)
+# ============================================================
+
+# Mobily (1 rule)
+DOMAIN-SUFFIX,epdg.mobily.com.sa
+# STC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc420.pub.3gppnetwork.org
+# Salam (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc009.mcc420.pub.3gppnetwork.org
+# Virgin (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc420.pub.3gppnetwork.org
+# Zain (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc420.pub.3gppnetwork.org
+
+# ============================================================
+# 🇿🇦 ZA - South Africa Wi-Fi Calling Rules (5)
+# ============================================================
+
+# Cell C (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc655.pub.3gppnetwork.org
+# MTN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc655.pub.3gppnetwork.org
+# Rain (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc074.mcc655.pub.3gppnetwork.org
+# Telkom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc655.pub.3gppnetwork.org
+# Vodacom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc655.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇷 AR - Argentina Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc310.mcc722.pub.3gppnetwork.org
+# Movistar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc722.pub.3gppnetwork.org
+# Personal (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc034.mcc722.pub.3gppnetwork.org
+# Tuenti (1 rule)
+IP-CIDR,186.143.132.125/32,no-resolve
+
+# ============================================================
+# 🇦🇹 AT - Austria Wi-Fi Calling Rules (4)
+# ============================================================
+
+# 3 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc232.pub.3gppnetwork.org
+# A1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc232.pub.3gppnetwork.org
+# MASS (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc017.mcc232.pub.3gppnetwork.org
+# Tmobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc232.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇺 AU - Australia Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Optus (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc505.pub.3gppnetwork.org
+# TPG (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc014.mcc505.pub.3gppnetwork.org
+# Telstra (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc505.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc505.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇳 BN - Brunei Darussalam Wi-Fi Calling Rules (4)
+# ============================================================
+
+# DST (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc011.mcc528.pub.3gppnetwork.org
+# Imagine (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc528.pub.3gppnetwork.org
+# Progresif (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc528.pub.3gppnetwork.org
+# UNN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc528.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇱 CL - Chile Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc003.mcc730.pub.3gppnetwork.org
+# Entel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc730.pub.3gppnetwork.org
+# Movistar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc730.pub.3gppnetwork.org
+# Wom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc009.mcc730.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇴 CO - Colombia Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc101.mcc732.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc123.mcc732.pub.3gppnetwork.org
+# Tigo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc103.mcc732.pub.3gppnetwork.org
+# Wom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc360.mcc732.pub.3gppnetwork.org
+
+# ============================================================
+# 🇩🇰 DK - Denmark Wi-Fi Calling Rules (4)
+# ============================================================
+
+# 3 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc238.pub.3gppnetwork.org
+# Tdc (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc238.pub.3gppnetwork.org
+# Telenor (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc238.pub.3gppnetwork.org
+# Telia (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc238.pub.3gppnetwork.org
+
+# ============================================================
+# 🇪🇬 EG - Egypt Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Etisalat (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc602.pub.3gppnetwork.org
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc602.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc602.pub.3gppnetwork.org
+# WE (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc602.pub.3gppnetwork.org
+
+# ============================================================
+# 🇭🇺 HU - Hungary Wi-Fi Calling Rules (4)
+# ============================================================
+
+# DIGI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc216.pub.3gppnetwork.org
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc030.mcc216.pub.3gppnetwork.org
+# Telenor (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc216.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc070.mcc216.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇪 IE - Ireland Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Eir (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc272.pub.3gppnetwork.org
+# Sky (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc025.mcc272.pub.3gppnetwork.org
+# Three (1 rule)
+DOMAIN-SUFFIX,epdg.three.ie
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc234.pub.3gppnetwork.org
+
+# ============================================================
+# 🇰🇿 KZ - Kazakhstan Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Beeline (2 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc401.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ims.beeline.kz
+# Altel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc401.pub.3gppnetwork.org
+# Tele2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc077.mcc401.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇹 LT - Lithuania Wi-Fi Calling Rules (4)
+# ============================================================
+
+# BITE (1 rule)
+DOMAIN-SUFFIX,nai.epc.mnc002.mcc246.3gppnetwork.org
+# Bite (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc246.pub.3gppnetwork.org
+# Tele2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc246.pub.3gppnetwork.org
+# ZEB (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc246.pub.3gppnetwork.org
+
+# ============================================================
+# 🇳🇴 NO - Norway Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Erate (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc015.mcc242.pub.3gppnetwork.org
+# ICE (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc014.mcc242.pub.3gppnetwork.org
+# Telenor (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc242.pub.3gppnetwork.org
+# Telia (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc242.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇰 PK - Pakistan Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Jazz (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc410.3gppnetwork.org
+# Telenor (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc410.3gppnetwork.org
+# Ufone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc410.3gppnetwork.org
+# Zong (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc410.3gppnetwork.org
+
+# ============================================================
+# 🇵🇱 PL - Poland Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc260.pub.3gppnetwork.org
+# Play (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc260.pub.3gppnetwork.org
+# Plus (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc260.pub.3gppnetwork.org
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc260.pub.3gppnetwork.org
+
+# ============================================================
+# 🇷🇴 RO - Romania Wi-Fi Calling Rules (4)
+# ============================================================
+
+# DIGI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc226.pub.3gppnetwork.org
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc226.pub.3gppnetwork.org
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc226.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc226.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇬 SG - Singapore Wi-Fi Calling Rules (4)
+# ============================================================
+
+# M1 (1 rule)
+DOMAIN-SUFFIX,epdg.mobileone.net.sg
+# Singtel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc525.pub.3gppnetwork.org
+# Starhub (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc525.pub.3gppnetwork.org
+# TPG (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc525.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇮 SI - Slovenia Wi-Fi Calling Rules (4)
+# ============================================================
+
+# A1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc040.mcc293.pub.3gppnetwork.org
+# T2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc064.mcc293.pub.3gppnetwork.org
+# Telekom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc041.mcc293.pub.3gppnetwork.org
+# Telemach (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc637.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇰 SK - Slovakia Wi-Fi Calling Rules (4)
+# ============================================================
+
+# 4ka (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc231.pub.3gppnetwork.org
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc231.pub.3gppnetwork.org
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc231.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc231.pub.3gppnetwork.org
+
+# ============================================================
+# 🇹🇼 TW - Taiwan, Province of China Wi-Fi Calling Rules (4)
+# ============================================================
+
+# APT (1 rule)
+DOMAIN-SUFFIX,epdg.epc.aptg.com.tw
+# Cht (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc092.mcc466.pub.3gppnetwork.org
+# Far East One (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc466.pub.3gppnetwork.org
+# TM (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc097.mcc466.pub.3gppnetwork.org
+
+# ============================================================
+# 🇺🇿 UZ - Uzbekistan Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Beeline (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc434.pub.3gppnetwork.org
+# Mobiuz (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc434.pub.3gppnetwork.org
+# Ucell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc434.pub.3gppnetwork.org
+# Uztelecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc008.mcc434.pub.3gppnetwork.org
+
+# ============================================================
+# 🇻🇳 VN - Viet Nam Wi-Fi Calling Rules (4)
+# ============================================================
+
+# Mobifone (1 rule)
+DOMAIN-SUFFIX,vowifi.mobifone.vn
+# Vietnamobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc425.pub.3gppnetwork.org
+# Viettel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc452.pub.3gppnetwork.org
+# Vinaphone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc452.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇪 AE - United Arab Emirates Wi-Fi Calling Rules (3)
+# ============================================================
+
+# DU (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc424.pub.3gppnetwork.org
+# Etisalat (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc424.etisalat.ae
+# Nedaa (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc011.mcc424.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇲 AM - Armenia Wi-Fi Calling Rules (3)
+# ============================================================
+
+# MTS (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc283.pub.3gppnetwork.org
+# Telecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc283.pub.3gppnetwork.org
+# Ucom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc283.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇭 BH - Bahrain Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Batelco (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc426.pub.3gppnetwork.org
+# Viva (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc426.pub.stc.com.bh
+# Zain (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc426.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇾 BY - Belarus Wi-Fi Calling Rules (3)
+# ============================================================
+
+# LIFE (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc257.pub.3gppnetwork.org
+# MTS (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc257.pub.3gppnetwork.org
+# Velcom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc257.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇾 CY - Cyprus Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Epic (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc280.pub.3gppnetwork.org
+# Primetel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc280.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc280.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇿 CZ - Czechia Wi-Fi Calling Rules (3)
+# ============================================================
+
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc230.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc230.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc230.pub.3gppnetwork.org
+
+# ============================================================
+# 🇪🇪 EE - Estonia Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Elisa (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc248.pub.3gppnetwork.org
+# Tele2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc248.pub.3gppnetwork.org
+# Telia (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc248.pub.3gppnetwork.org
+
+# ============================================================
+# 🇫🇮 FI - Finland Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Elisa (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc244.pub.3gppnetwork.org
+# Telenor (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc012.mcc244.pub.3gppnetwork.org
+# Telia (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc091.mcc244.pub.3gppnetwork.org
+
+# ============================================================
+# 🇬🇷 GR - Greece Wi-Fi Calling Rules (3)
+# ============================================================
+
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc202.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc202.pub.3gppnetwork.org
+# Wind (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc202.pub.3gppnetwork.org
+
+# ============================================================
+# 🇭🇷 HR - Croatia Wi-Fi Calling Rules (3)
+# ============================================================
+
+# A1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc219.pub.3gppnetwork.org
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc219.pub.3gppnetwork.org
+# Telemach (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc219.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇸 IS - Iceland Wi-Fi Calling Rules (3)
+# ============================================================
+
+# NOVA (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc011.mcc274.pub.3gppnetwork.org
+# Siminn (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc274.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc274.pub.3gppnetwork.org
+
+# ============================================================
+# 🇰🇪 KE - Kenya Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Airtel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc639.pub.3gppnetwork.org
+# Jambotel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc011.mcc639.pub.3gppnetwork.org
+# Safaricom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc639.pub.3gppnetwork.org
+
+# ============================================================
+# 🇰🇭 KH - Cambodia Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Cellcard (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc456.pub.3gppnetwork.org
+# Metfone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc008.mcc456.pub.3gppnetwork.org
+# Smart (1 rule)
+DOMAIN-SUFFIX,epdg01.epc.mnc006.mcc456.pub.3gppnetwork.org
+
+# ============================================================
+# 🇰🇼 KW - Kuwait Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Ooredoo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc419.pub.3gppnetwork.org
+# Viva (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc419.pub.3gppnetwork.org
+# Zain (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc419.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇺 LU - Luxembourg Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc099.mcc270.pub.3gppnetwork.org
+# Post (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc270.pub.3gppnetwork.org
+# Tango (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc077.mcc270.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇻 LV - Latvia Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Bite (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc247.pub.3gppnetwork.org
+# LMT (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc247.pub.3gppnetwork.org
+# Tele2 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc247.pub.3gppnetwork.org
+
+# ============================================================
+# 🇳🇿 NZ - New Zealand Wi-Fi Calling Rules (3)
+# ============================================================
+
+# 2Degrees (1 rule)
+DOMAIN-SUFFIX,epdg.ims.2degrees.net.nz
+# Spark (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc530.pub.3gppnetwork.spark.co.nz
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc530.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇦 PA - Panama Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Cable (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc714.pub.3gppnetwork.org
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc003.mcc714.pub.3gppnetwork.org
+# Tigo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc020.mcc714.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇪 PE - Peru Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc010.mcc716.pub.3gppnetwork.org
+# Entel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc017.mcc716.pub.3gppnetwork.org
+# Telefonica (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc716.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇭 PH - Philippines Wi-Fi Calling Rules (3)
+# ============================================================
+
+# DITO (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc066.mcc515.pub.3gppnetwork.org
+# Globe (1 rule)
+DOMAIN-SUFFIX,weconnect.globe.com.ph
+# Smart (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc515.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇷 PR - Puerto Rico Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Claro (2 rules)
+DOMAIN-SUFFIX,epdg.epc.mnc110.mcc330.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.ims.mnc110.mcc330.pub.3gppnetwork.org
+# Liberty (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc790.mcc313.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇹 PT - Portugal Wi-Fi Calling Rules (3)
+# ============================================================
+
+# DIGI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc268.pub.3gppnetwork.org
+# MEO (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc268.pub.3gppnetwork.org
+# Nos (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc268.pub.3gppnetwork.org
+
+# ============================================================
+# 🇶🇦 QA - Qatar Wi-Fi Calling Rules (3)
+# ============================================================
+
+# MOI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc427.pub.3gppnetwork.org
+# Ooredoo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc427.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc427.pub.3gppnetwork.org
+
+# ============================================================
+# 🇹🇭 TH - Thailand Wi-Fi Calling Rules (3)
+# ============================================================
+
+# AIS (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc520.pub.3gppnetwork.org
+# DTAC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc520.pub.3gppnetwork.org
+# Truemove (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc520.pub.3gppnetwork.org
+
+# ============================================================
+# 🇹🇷 TR - Türkiye Wi-Fi Calling Rules (3)
+# ============================================================
+
+# AVEA (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc286.pub.3gppnetwork.org
+# Turkcell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc286.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc286.pub.3gppnetwork.org
+
+# ============================================================
+# 🇹🇿 TZ - Tanzania, United Republic of Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Airtel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc640.pub.3gppnetwork.org
+# Tigo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc640.pub.3gppnetwork.org
+# Zantel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc640.pub.3gppnetwork.org
+
+# ============================================================
+# 🇺🇦 UA - Ukraine Wi-Fi Calling Rules (3)
+# ============================================================
+
+# Kyivstar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc255.pub.3gppnetwork.org
+# Lifecell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc006.mcc255.pub.3gppnetwork.org
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc255.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇬 AG - Antigua and Barbuda Wi-Fi Calling Rules (2)
+# ============================================================
+
+# APUA (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc344.pub.3gppnetwork.org
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc920.mcc344.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇿 AZ - Azerbaijan Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Azercell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc400.pub.3gppnetwork.org
+# Bakcell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc400.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇩 BD - Bangladesh Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Banglalink (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc470.pub.3gppnetwork.org
+# GRAMEENPHONE (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc470.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇬 BG - Bulgaria Wi-Fi Calling Rules (2)
+# ============================================================
+
+# A1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc284.pub.3gppnetwork.org
+# Vivacom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc284.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇩 CD - Congo, The Democratic Republic of the Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Airtel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc630.pub.3gppnetwork.org
+# MTN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc629.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇷 CR - Costa Rica Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc003.mcc712.pub.3gppnetwork.org
+# LIBERTY (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc712.pub.3gppnetwork.org
+
+# ============================================================
+# 🇩🇴 DO - Dominican Republic Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc370.pub.3gppnetwork.org
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc370.pub.3gppnetwork.org
+
+# ============================================================
+# 🇪🇨 EC - Ecuador Wi-Fi Calling Rules (2)
+# ============================================================
+
+# CNT (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc740.pub.3gppnetwork.org
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc740.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇩 ID - Indonesia Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Smartfren (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc009.mcc510.pub.3gppnetwork.org
+# Telkomsel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc510.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇶 IQ - Iraq Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Asiacell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc418.pub.3gppnetwork.org
+# Fastlink (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc066.mcc418.pub.3gppnetwork.org
+
+# ============================================================
+# 🇮🇷 IR - Iran, Islamic Republic of Wi-Fi Calling Rules (2)
+# ============================================================
+
+# MCI (1 rule)
+DOMAIN-SUFFIX,epdg.mci.ir
+# MTN (1 rule)
+DOMAIN-SUFFIX,vowifi.mtnirancell.ir
+
+# ============================================================
+# 🇯🇲 JM - Jamaica Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Cable (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc180.mcc338.pub.3gppnetwork.org
+# Digicel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc338.pub.3gppnetwork.org
+
+# ============================================================
+# 🇯🇴 JO - Jordan Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Umniah (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc416.pub.3gppnetwork.org
+# Zain (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc416.pub.3gppnetwork.org
+
+# ============================================================
+# 🇯🇵 JP - Japan Wi-Fi Calling Rules (2)
+# ============================================================
+
+# KDDI (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc051.mcc440.pub.3gppnetwork.org
+# Rakuten (1 rule)
+DOMAIN-SUFFIX,vowifi.rm-n.jp
+
+# ============================================================
+# 🇰🇬 KG - Kyrgyzstan Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Beeline (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc437.pub.3gppnetwork.org
+# Nur (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc009.mcc437.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇮 LI - Liechtenstein Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Salt (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc295.pub.3gppnetwork.org
+# Telecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc295.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇰 LK - Sri Lanka Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Dialog (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc413.pub.3gppnetwork.org
+# Mobitel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc413.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇾 LY - Libya Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Almadar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc606.3gppnetwork.org
+# Libyanamobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc606.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇦 MA - Morocco Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Maroc (1 rule)
+DOMAIN-SUFFIX,epdg.iam.ma
+# Orange (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc604.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇳 MN - Mongolia Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Mobicom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc099.mcc428.pub.3gppnetwork.org
+# Ondo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc033.mcc428.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇹 MT - Malta Wi-Fi Calling Rules (2)
+# ============================================================
+
+# GO (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc021.mcc278.pub.3gppnetwork.org
+# Melita (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc077.mcc278.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇻 MV - Maldives Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Dhiraagu (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc472.pub.3gppnetwork.org
+# Ooredoo (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc472.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇽 MX - Mexico Wi-Fi Calling Rules (2)
+# ============================================================
+
+# AMX (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc020.mcc334.pub.3gppnetwork.org
+# AT&T (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc334.pub.3gppnetwork.org
+
+# ============================================================
+# 🇳🇦 NA - Namibia Wi-Fi Calling Rules (2)
+# ============================================================
+
+# MTC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc649.pub.3gppnetwork.org
+# Paratus (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc649.pub.3gppnetwork.org
+
+# ============================================================
+# 🇳🇵 NP - Nepal Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Namaste (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc429.pub.3gppnetwork.org
+# Ncell (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc429.pub.3gppnetwork.org
+
+# ============================================================
+# 🇺🇾 UY - Uruguay Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc748.pub.3gppnetwork.org
+# Movistar (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc748.pub.3gppnetwork.org
+
+# ============================================================
+# 🇿🇲 ZM - Zambia Wi-Fi Calling Rules (2)
+# ============================================================
+
+# Airtel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc645.pub.3gppnetwork.org
+# MTN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc645.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇫 AF - Afghanistan Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Etisalat (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc050.mcc412.3gppnetwork.org
+
+# ============================================================
+# 🇦🇮 AI - Anguilla Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc840.mcc365.pub.3gppnetwork.org
+
+# ============================================================
+# 🇦🇱 AL - Albania Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Vodafone (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc276.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇧 BB - Barbados Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Cable (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc600.mcc342.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇯 BJ - Benin Wi-Fi Calling Rules (1)
+# ============================================================
+
+# MTN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc616.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇲 BM - Bermuda Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Paradise (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc350.pub.3gppnetwork.org
+
+# ============================================================
+# 🇧🇸 BS - Bahamas Wi-Fi Calling Rules (1)
+# ============================================================
+
+# BTC (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc039.mcc364.pub.3gppnetwork.org
+
+# ============================================================
+# 🇨🇳 CN - China Wi-Fi Calling Rules (1)
+# ============================================================
+
+# China Telecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc011.mcc460.pub.3gppnetwork.org
+
+# ============================================================
+# 🇩🇲 DM - Dominica Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc110.mcc366.pub.3gppnetwork.org
+
+# ============================================================
+# 🇬🇩 GD - Grenada Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc110.mcc352.pub.3gppnetwork.org
+
+# ============================================================
+# 🇬🇭 GH - Ghana Wi-Fi Calling Rules (1)
+# ============================================================
+
+# MTN (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc620.pub.3gppnetwork.org
+
+# ============================================================
+# 🇬🇹 GT - Guatemala Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc001.mcc704.pub.3gppnetwork.org
+
+# ============================================================
+# 🇬🇾 GY - Guyana Wi-Fi Calling Rules (1)
+# ============================================================
+
+# ENetworks (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc000.mcc738.pub.3gppnetwork.org
+
+# ============================================================
+# 🇭🇳 HN - Honduras Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc001.mcc708.pub.3gppnetwork.org
+
+# ============================================================
+# 🇰🇳 KN - Saint Kitts and Nevis Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc110.mcc356.pub.3gppnetwork.org
+
+# ============================================================
+# 🇰🇾 KY - Cayman Islands Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc140.mcc346.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇨 LC - Saint Lucia Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc110.mcc358.pub.3gppnetwork.org
+
+# ============================================================
+# 🇱🇸 LS - Lesotho Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Econet (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc651.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇨 MC - Monaco Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Telecom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc212.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇪 ME - Montenegro Wi-Fi Calling Rules (1)
+# ============================================================
+
+# T-Mobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc297.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇰 MK - North Macedonia Wi-Fi Calling Rules (1)
+# ============================================================
+
+# A1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc294.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇴 MO - Macao Wi-Fi Calling Rules (1)
+# ============================================================
+
+# 3 (1 rule)
+DOMAIN-SUFFIX,wlan.three.com.mo
+
+# ============================================================
+# 🇲🇼 MW - Malawi Wi-Fi Calling Rules (1)
+# ============================================================
+
+# TNM (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc650.pub.3gppnetwork.org
+
+# ============================================================
+# 🇲🇿 MZ - Mozambique Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Vodacom (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc643.3gppnetwork.org
+
+# ============================================================
+# 🇳🇮 NI - Nicaragua Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc021.mcc710.pub.3gppnetwork.org
+
+# ============================================================
+# 🇴🇲 OM - Oman Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Omantel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc422.pub.3gppnetwork.org
+
+# ============================================================
+# 🇵🇾 PY - Paraguay Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc744.pub.3gppnetwork.org
+
+# ============================================================
+# 🇷🇸 RS - Serbia Wi-Fi Calling Rules (1)
+# ============================================================
+
+# A1 (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc005.mcc220.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇩 SD - Sudan Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Sudani (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc634.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇳 SN - Senegal Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Free (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc002.mcc608.pub.3gppnetwork.org
+
+# ============================================================
+# 🇸🇻 SV - El Salvador Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Claro (1 rule)
+DOMAIN-SUFFIX,epdg.ims.mnc001.mcc706.pub.3gppnetwork.org
+
+# ============================================================
+# 🇹🇨 TC - Turks and Caicos Islands Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc350.mcc376.pub.3gppnetwork.org
+
+# ============================================================
+# 🇹🇹 TT - Trinidad and Tobago Wi-Fi Calling Rules (1)
+# ============================================================
+
+# BMobile (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc012.mcc374.pub.3gppnetwork.org
+
+# ============================================================
+# 🇺🇬 UG - Uganda Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Airtel (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc001.mcc641.pub.3gppnetwork.org
+
+# ============================================================
+# 🇻🇨 VC - Saint Vincent and the Grenadines Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc110.mcc360.pub.3gppnetwork.org
+
+# ============================================================
+# 🇻🇬 VG - Virgin Islands, British Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Flow (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc170.mcc348.pub.3gppnetwork.org
+
+# ============================================================
+# 🇿🇼 ZW - Zimbabwe Wi-Fi Calling Rules (1)
+# ============================================================
+
+# Econet (1 rule)
+DOMAIN-SUFFIX,epdg.epc.mnc004.mcc648.pub.3gppnetwork.org
