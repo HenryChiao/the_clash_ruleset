@@ -14,6 +14,7 @@ IP-CIDR,119.31.0.0/17,no-resolve
 # Maxis
 DOMAIN-SUFFIX,epdg.epc.mnc012.mcc502.pub.3gppnetwork.org
 IP-CIDR,202.75.128.0/19,no-resolve
+DOMAIN-KEYWORD,maxis
 
 # Digi
 DOMAIN-SUFFIX,epdg.epc.mnc016.mcc502.pub.3gppnetwork.org
